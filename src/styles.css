@@ -240,6 +240,39 @@ h1, h2, h3, .brand { font-family: ui-rounded, 'Trebuchet MS', system-ui, sans-se
 .architecture-unified-grid { grid-template-columns: minmax(270px, .85fr) minmax(0, 1.35fr); }
 @media (max-width: 760px) { .architecture-unified-grid { grid-template-columns: minmax(0, 1fr); } }
 
+.main-menu-more, .resource-more, .curriculum-details { margin-top: .85rem; }
+.main-menu-more > summary, .resource-more > summary, .curriculum-details > summary { align-items: center; background: #f1f7f4; border: 1px solid #dbe8e3; border-radius: 12px; color: #46605b; cursor: pointer; display: flex; font-weight: 900; gap: .65rem; justify-content: space-between; list-style: none; min-height: 46px; padding: .55rem .75rem; }
+.main-menu-more > summary::-webkit-details-marker, .resource-more > summary::-webkit-details-marker, .curriculum-details > summary::-webkit-details-marker { display: none; }
+.main-menu-more > summary span:first-child, .resource-more > summary::first-letter { color: #6c57a9; }
+.main-menu-more[open] > summary, .resource-more[open] > summary, .curriculum-details[open] > summary { background: #e8f2ee; border-color: #bcd8cf; }
+.main-menu-more__grid { display: grid; gap: .65rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: .65rem; }
+.main-menu-more__grid .main-menu-card { min-height: 76px; }
+.learning-steps--collapsible { padding: 0; overflow: hidden; }
+.learning-steps--collapsible > summary { align-items: center; color: #4c625e; cursor: pointer; display: flex; gap: .65rem; justify-content: space-between; list-style: none; min-height: 62px; padding: .75rem 1rem; }
+.learning-steps--collapsible > summary::-webkit-details-marker { display: none; }
+.learning-steps__icon { align-items: center; background: #fff1c8; border-radius: 10px; display: inline-flex; font-size: 1.25rem; height: 2.35rem; justify-content: center; width: 2.35rem; }
+.learning-steps--collapsible > summary > span:nth-child(2) { display: grid; gap: .12rem; margin-right: auto; }
+.learning-steps--collapsible > summary small, .curriculum-details > summary small { color: #74837f; font-size: .7rem; font-weight: 700; }
+.learning-steps__content { border-top: 1px solid #e1ebe7; padding: 1rem; }
+.resource-more { border-top: 1px solid #e3ece8; padding-top: .85rem; }
+.resource-more > summary { justify-content: center; }
+.resource-more > summary span { color: #657b75; font-size: .75rem; }
+.curriculum-details { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: .55rem; }
+.curriculum-details > summary { background: #f8fbfa; border: 0; justify-content: flex-start; }
+.curriculum-details > summary > span:first-child { align-items: center; background: #eeeaff; border-radius: 9px; display: inline-flex; font-size: 1.2rem; height: 2.25rem; justify-content: center; width: 2.25rem; }
+.curriculum-details > summary > span:nth-child(2) { display: grid; gap: .12rem; margin-right: auto; }
+.curriculum-details > section { margin: .65rem 0 0; }
+
+@media (min-width: 981px) {
+  .main-menu-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .main-menu-more__grid { grid-template-columns: 1fr; }
+  .learning-steps__content { padding: .8rem; }
+  .curriculum-details { border-radius: 13px; }
+}
+
 :root {
   color: #354247;
   background: #f7faf8;
@@ -372,3 +405,17 @@ button, input { min-height: 44px; }
 .mission-map-page { padding-top: 1.35rem; }.mission-map-heading { align-items: center; background: linear-gradient(120deg, #fff2db, #f7fbf8 56%, #ebe4ff); border: 1px solid #ece2d9; border-radius: 24px; display: flex; gap: 1rem; justify-content: space-between; margin: .75rem 0 1.5rem; padding: clamp(1.1rem, 3vw, 1.85rem); }.mission-map-heading h1 { color: #483b52; font-size: clamp(1.9rem, 4vw, 3.25rem); letter-spacing: -.05em; line-height: .96; margin: .18rem 0 .45rem; }.mission-map-heading p:not(.eyebrow) { color: #6f6673; font-size: .86rem; line-height: 1.45; margin: 0; max-width: 600px; }.mission-map-heading > span { align-items: center; background: rgba(255,255,255,.7); border-radius: 18px; display: flex; font-size: 2.3rem; height: 70px; justify-content: center; width: 70px; }
 @media (max-width: 820px) { .main-menu-hero { grid-template-columns: 1fr; }.main-menu-hero__art { min-height: 210px; }.main-menu-hero__art .city-map { bottom: -16%; right: 2%; width: min(90%, 510px); }.main-menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 540px) { .main-menu-page { padding: 1rem 1rem 3.2rem; }.main-menu-hero { border-radius: 22px; }.main-menu-hero__copy { padding: 1.35rem; }.main-menu-hero__art { min-height: 175px; }.main-menu-hero__art .mio-hero { right: 13%; width: min(38%, 150px); }.main-menu-board { border-radius: 19px; }.main-menu-board .section-heading { align-items: flex-start; flex-direction: column; gap: .35rem; margin-bottom: .9rem; }.main-menu-grid { grid-template-columns: 1fr; }.main-menu-card { min-height: 78px; }.main-menu-note { align-items: flex-start; }.mission-map-heading { align-items: flex-start; border-radius: 19px; }.mission-map-heading > span { font-size: 1.8rem; height: 54px; min-width: 54px; width: 54px; } }
+
+@media (min-width: 981px) { .main-menu-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.main-menu-card { border-radius: 14px; min-height: 82px; }
+.main-menu-board { border-radius: 18px; }
+.main-menu-note { border-radius: 15px; }
+.resource-hero, .curriculum-hero, .nets-hero, .architecture-page-hero, .mission-map-heading { border-radius: 18px; }
+@media (max-width: 720px) { .main-menu-grid { grid-template-columns: 1fr; } .main-menu-card { min-height: 70px; } }
+.nets-method-details { background: #fff; border: 1px solid var(--line); border-radius: 15px; margin: .85rem 0 1.1rem; padding: .55rem; }
+.nets-method-details > summary { align-items: center; color: #46605b; cursor: pointer; display: flex; gap: .65rem; justify-content: space-between; list-style: none; min-height: 44px; padding: .35rem .55rem; }
+.nets-method-details > summary::-webkit-details-marker { display: none; }
+.nets-method-details > summary span:nth-child(2) { display: grid; gap: .12rem; margin-right: auto; }
+.nets-method-details > summary small { color: #74837f; font-size: .7rem; font-weight: 700; }
+.nets-method-details[open] > summary { border-bottom: 1px solid var(--line); }
+.nets-method-details .nets-method { margin: .7rem 0 .15rem; }

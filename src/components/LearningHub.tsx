@@ -94,20 +94,23 @@ export function LearningHub({ onGoHome, onOpenNets }: LearningHubProps) {
         <div className="resource-hero__cat" aria-hidden="true">🐱<span>◻︎</span></div>
       </section>
 
-      <section className="learning-steps" aria-labelledby="learning-steps-heading">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">CARA BELAJAR MIO</p>
-            <h2 id="learning-steps-heading">Bukan hafalan bentuk</h2>
+      <details className="learning-steps learning-steps--collapsible">
+        <summary><span className="learning-steps__icon" aria-hidden="true">💡</span><span><b>Cara belajar Mio</b><small>Empat langkah sederhana</small></span><span aria-hidden="true">⌄</span></summary>
+        <div className="learning-steps__content" aria-labelledby="learning-steps-heading">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">CARA BELAJAR MIO</p>
+              <h2 id="learning-steps-heading">Bukan hafalan bentuk</h2>
+            </div>
+            <p>Ikuti urutan ini ketika mempelajari setiap bangun ruang.</p>
           </div>
-          <p>Ikuti urutan ini ketika mempelajari setiap bangun ruang.</p>
+          <ol>
+            {learningSteps.map(([number, title, description]) => (
+              <li key={number}><span>{number}</span><div><b>{title}</b><p>{description}</p></div></li>
+            ))}
+          </ol>
         </div>
-        <ol>
-          {learningSteps.map(([number, title, description]) => (
-            <li key={number}><span>{number}</span><div><b>{title}</b><p>{description}</p></div></li>
-          ))}
-        </ol>
-      </section>
+      </details>
 
       <section className="resource-library" aria-labelledby="resource-library-heading">
         <div className="section-heading resource-library__heading">
@@ -159,51 +162,54 @@ export function LearningHub({ onGoHome, onOpenNets }: LearningHubProps) {
           </section>
         )}
 
-        <div className="resource-detail__grid">
-          <section className="resource-subcard" aria-labelledby="properties-heading">
-            <p className="mini-label">CIRI-CIRI</p>
-            <h3 id="properties-heading">Bagian yang perlu diperhatikan</h3>
-            <dl className="property-list">
-              {selected.properties.map((property) => (
-                <div key={property.label}>
-                  <dt>{property.label}</dt>
-                  <dd>{property.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
+        <details className="resource-more">
+          <summary>Kenali lebih jauh <span aria-hidden="true">⌄</span></summary>
+          <div className="resource-detail__grid">
+            <section className="resource-subcard" aria-labelledby="properties-heading">
+              <p className="mini-label">CIRI-CIRI</p>
+              <h3 id="properties-heading">Bagian yang perlu diperhatikan</h3>
+              <dl className="property-list">
+                {selected.properties.map((property) => (
+                  <div key={property.label}>
+                    <dt>{property.label}</dt>
+                    <dd>{property.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
 
-          <section className="resource-subcard resource-subcard--examples" aria-labelledby="examples-heading">
-            <p className="mini-label">DI SEKITAR KITA</p>
-            <h3 id="examples-heading">Benda yang mirip</h3>
-            <ul className="everyday-list">
-              {selected.everydayExamples.map((example) => (
-                <li key={example.name}><b>{example.name}</b><span>{example.description}</span></li>
-              ))}
-            </ul>
-            <p className="resource-note">Benda nyata disebut <b>mirip</b>, karena bentuk fisiknya tidak selalu seideal model matematika.</p>
-          </section>
-        </div>
-
-        <NetSummary resource={selected} />
-        <div className="resource-actions">
-          <button type="button" className="primary-button" onClick={onOpenNets}>Jelajahi jaring-jaring 3D →</button>
-          <span>Materi ini terkait: {selected.relatedTpCodes.join(' · ')}</span>
-        </div>
-
-        <details className="formula-details">
-          <summary>Referensi rumus pengayaan (bukan target penilaian v1)</summary>
-          <p>Rumus di bawah tersedia sebagai perluasan pengetahuan. Misi inti MeowMath tetap berfokus pada bentuk, susunan, dan visualisasi spasial.</p>
-          <div>
-            {selected.formulas.map((formula) => (
-              <article key={formula.name}>
-                <h4>{formula.name}</h4>
-                <strong>{formula.expression}</strong>
-                <p>{formula.variables}</p>
-                <small>{formula.purpose}</small>
-              </article>
-            ))}
+            <section className="resource-subcard resource-subcard--examples" aria-labelledby="examples-heading">
+              <p className="mini-label">DI SEKITAR KITA</p>
+              <h3 id="examples-heading">Benda yang mirip</h3>
+              <ul className="everyday-list">
+                {selected.everydayExamples.map((example) => (
+                  <li key={example.name}><b>{example.name}</b><span>{example.description}</span></li>
+                ))}
+              </ul>
+              <p className="resource-note">Benda nyata disebut <b>mirip</b>, karena bentuk fisiknya tidak selalu seideal model matematika.</p>
+            </section>
           </div>
+
+          <NetSummary resource={selected} />
+          <div className="resource-actions">
+            <button type="button" className="primary-button" onClick={onOpenNets}>Jelajahi jaring-jaring 3D →</button>
+            <span>Materi ini terkait: {selected.relatedTpCodes.join(' · ')}</span>
+          </div>
+
+          <details className="formula-details">
+            <summary>Referensi rumus pengayaan (bukan target penilaian v1)</summary>
+            <p>Rumus di bawah tersedia sebagai perluasan pengetahuan. Misi inti MeowMath tetap berfokus pada bentuk, susunan, dan visualisasi spasial.</p>
+            <div>
+              {selected.formulas.map((formula) => (
+                <article key={formula.name}>
+                  <h4>{formula.name}</h4>
+                  <strong>{formula.expression}</strong>
+                  <p>{formula.variables}</p>
+                  <small>{formula.purpose}</small>
+                </article>
+              ))}
+            </div>
+          </details>
         </details>
       </article>
     </main>
@@ -225,41 +231,46 @@ export function CurriculumMap({ onGoHome }: CurriculumMapProps) {
       </section>
       <aside className="curriculum-notice"><b>Bedakan sumbernya.</b> {curriculumMenuData.curriculumNotice}</aside>
 
-      <section className="curriculum-section curriculum-section--official" aria-labelledby="cp-heading">
-        <header>
-          <span className="source-label source-label--official">{officialCp.statusLabel}</span>
-          <h2 id="cp-heading">{officialCp.title}</h2>
-          <p>{officialCp.subject} · {officialCp.phase} · Elemen {officialCp.element}</p>
-        </header>
-        <p className="curriculum-summary">{officialCp.summaryNotice}</p>
-        <div className="cp-focus-grid">
-          {officialCp.focuses.map((focus) => (
-            <article key={focus.code}>
-              <b>{focus.code}</b>
-              <h3>{focus.summary}</h3>
-              <p><span>Dalam MeowMath:</span> {focus.meowMathTranslation}</p>
-            </article>
-          ))}
-        </div>
-        <div className="source-links">
-          {officialCp.sources.map((source) => (
-            <a key={source.href} href={source.href} target="_blank" rel="noreferrer">
-              <b>{source.label} ↗</b><small>{source.note}</small>
-            </a>
-          ))}
-        </div>
-      </section>
+      <details className="curriculum-details">
+        <summary><span aria-hidden="true">🧭</span><span><b>Acuan resmi</b><small>CP Matematika Fase C</small></span><span aria-hidden="true">⌄</span></summary>
+        <section className="curriculum-section curriculum-section--official" aria-labelledby="cp-heading">
+          <header>
+            <span className="source-label source-label--official">{officialCp.statusLabel}</span>
+            <h2 id="cp-heading">{officialCp.title}</h2>
+            <p>{officialCp.subject} · {officialCp.phase} · Elemen {officialCp.element}</p>
+          </header>
+          <p className="curriculum-summary">{officialCp.summaryNotice}</p>
+          <div className="cp-focus-grid">
+            {officialCp.focuses.map((focus) => (
+              <article key={focus.code}>
+                <b>{focus.code}</b>
+                <h3>{focus.summary}</h3>
+                <p><span>Dalam MeowMath:</span> {focus.meowMathTranslation}</p>
+              </article>
+            ))}
+          </div>
+          <div className="source-links">
+            {officialCp.sources.map((source) => (
+              <a key={source.href} href={source.href} target="_blank" rel="noreferrer">
+                <b>{source.label} ↗</b><small>{source.note}</small>
+              </a>
+            ))}
+          </div>
+        </section>
+      </details>
 
-      <section className="curriculum-section curriculum-section--proposal" aria-labelledby="tp-atp-heading">
-        <header>
-          <span className="source-label source-label--proposal">{meowMathProposal.statusLabel}</span>
-          <h2 id="tp-atp-heading">{meowMathProposal.title}</h2>
-          <p>{meowMathProposal.purpose}</p>
-        </header>
-        <div className="curriculum-boundaries">
-          <b>Batas materi v1</b>
-          <ul>{meowMathProposal.boundaries.map((boundary) => <li key={boundary}>{boundary}</li>)}</ul>
-        </div>
+      <details className="curriculum-details">
+        <summary><span aria-hidden="true">🗺️</span><span><b>Rencana belajar MeowMath</b><small>TP dan ATP yang digunakan</small></span><span aria-hidden="true">⌄</span></summary>
+        <section className="curriculum-section curriculum-section--proposal" aria-labelledby="tp-atp-heading">
+          <header>
+            <span className="source-label source-label--proposal">{meowMathProposal.statusLabel}</span>
+            <h2 id="tp-atp-heading">{meowMathProposal.title}</h2>
+            <p>{meowMathProposal.purpose}</p>
+          </header>
+          <div className="curriculum-boundaries">
+            <b>Batas materi v1</b>
+            <ul>{meowMathProposal.boundaries.map((boundary) => <li key={boundary}>{boundary}</li>)}</ul>
+          </div>
 
         <h3 className="curriculum-subheading">Tujuan Pembelajaran (TP)</h3>
         <div className="tp-list">
@@ -283,8 +294,9 @@ export function CurriculumMap({ onGoHome }: CurriculumMapProps) {
           ))}
         </ol>
         <p className="curriculum-unit-note">{meowMathProposal.unitNote}</p>
-        <a className="single-source-link" href={meowMathProposal.source.href} target="_blank" rel="noreferrer">{meowMathProposal.source.label} ↗ <small>{meowMathProposal.source.note}</small></a>
-      </section>
+          <a className="single-source-link" href={meowMathProposal.source.href} target="_blank" rel="noreferrer">{meowMathProposal.source.label} ↗ <small>{meowMathProposal.source.note}</small></a>
+        </section>
+      </details>
 
       <aside className="school-decision"><span className="source-label source-label--school">{schoolDecision.statusLabel}</span><p>{schoolDecision.note}</p></aside>
     </main>

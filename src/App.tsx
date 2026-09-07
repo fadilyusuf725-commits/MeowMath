@@ -536,17 +536,22 @@ function MainMenuScreen({ profile, latestResults, completedCount, isMissionLocke
             <span><b>Studio Arsitek</b><small>Berkreasi dengan bentuk ruang</small></span>
             <i aria-hidden="true">→</i>
           </button>
-          <button type="button" className="main-menu-card main-menu-card--curriculum" onClick={onGoCurriculum}>
-            <span className="main-menu-card__icon" aria-hidden="true">🧭</span>
-            <span><b>CP · TP · ATP</b><small>Lihat tujuan belajar kita</small></span>
-            <i aria-hidden="true">→</i>
-          </button>
-          <button type="button" className="main-menu-card main-menu-card--teacher" onClick={onGoTeacher}>
-            <span className="main-menu-card__icon" aria-hidden="true">👩‍🏫</span>
-            <span><b>Untuk Guru</b><small>Lihat ringkasan belajar lokal</small></span>
-            <i aria-hidden="true">→</i>
-          </button>
         </div>
+        <details className="main-menu-more">
+          <summary>Untuk orang dewasa <span aria-hidden="true">⌄</span></summary>
+          <div className="main-menu-more__grid">
+            <button type="button" className="main-menu-card main-menu-card--curriculum" onClick={onGoCurriculum}>
+              <span className="main-menu-card__icon" aria-hidden="true">🧭</span>
+              <span><b>Tujuan belajar</b><small>Lihat CP, TP, dan ATP</small></span>
+              <i aria-hidden="true">→</i>
+            </button>
+            <button type="button" className="main-menu-card main-menu-card--teacher" onClick={onGoTeacher}>
+              <span className="main-menu-card__icon" aria-hidden="true">👩‍🏫</span>
+              <span><b>Ringkasan guru</b><small>Lihat progres belajar lokal</small></span>
+              <i aria-hidden="true">→</i>
+            </button>
+          </div>
+        </details>
       </section>
 
       <section className="main-menu-note">
@@ -618,11 +623,14 @@ function NetsPage({ onGoHome, onGoMaterials }: { readonly onGoHome: () => void; 
         </div>
         <span aria-hidden="true">✂️</span>
       </section>
-      <section className="nets-method" aria-label="Cara mengamati jaring-jaring">
-        <article><span>1</span><b>Hitung bidang</b><p>Pastikan jumlah bidang sesuai dengan bangun yang dipilih.</p></article>
-        <article><span>2</span><b>Cocokkan bentuk</b><p>Cari alas, tutup, dan bidang tegak yang ukuran atau bentuknya sesuai.</p></article>
-        <article><span>3</span><b>Bayangkan lipatan</b><p>Bidang harus tersambung sisi ke sisi tanpa saling menutupi.</p></article>
-      </section>
+      <details className="nets-method-details">
+        <summary><span aria-hidden="true">💡</span><span><b>Cara mengamati</b><small>Tiga petunjuk sebelum mulai</small></span><span aria-hidden="true">⌄</span></summary>
+        <section className="nets-method" aria-label="Cara mengamati jaring-jaring">
+          <article><span>1</span><b>Hitung bidang</b><p>Pastikan jumlah bidang sesuai dengan bangun yang dipilih.</p></article>
+          <article><span>2</span><b>Cocokkan bentuk</b><p>Cari alas, tutup, dan bidang tegak yang ukuran atau bentuknya sesuai.</p></article>
+          <article><span>3</span><b>Bayangkan lipatan</b><p>Bidang harus tersambung sisi ke sisi tanpa saling menutupi.</p></article>
+        </section>
+      </details>
       <Suspense fallback={<LoadingScreen />}>
         <NetExplorer />
       </Suspense>
