@@ -240,6 +240,109 @@ h1, h2, h3, .brand { font-family: ui-rounded, 'Trebuchet MS', system-ui, sans-se
 .architecture-unified-grid { grid-template-columns: minmax(270px, .85fr) minmax(0, 1.35fr); }
 @media (max-width: 760px) { .architecture-unified-grid { grid-template-columns: minmax(0, 1fr); } }
 
+:root {
+  color: #354247;
+  background: #f7faf8;
+  --ink: #354247;
+  --muted-ink: #68777a;
+  --line: #dbe7e3;
+  --surface: #ffffff;
+  --soft-surface: #f1f8f5;
+  --accent: #ef7654;
+  --accent-dark: #c95d45;
+}
+
+body { background: #f7faf8; color: var(--ink); }
+h1, h2, h3, .brand { letter-spacing: 0; }
+button, input { min-height: 44px; }
+.primary-button { background: var(--accent); box-shadow: 0 3px 0 var(--accent-dark), 0 8px 18px rgba(201, 93, 69, .16); }
+.primary-button:hover:not(:disabled) { box-shadow: 0 4px 0 var(--accent-dark), 0 10px 20px rgba(201, 93, 69, .2); }
+.secondary-button { background: #e9f2ef; color: #45605b; }
+.secondary-button:hover { background: #dcebe6; }
+.topbar { background: rgba(247, 250, 248, .94); border-bottom-color: var(--line); padding-top: .65rem; padding-bottom: .65rem; }
+.app-shell, .home-page, .content-page { background: #f7faf8; }
+.home-page, .content-page, .main-menu-page { max-width: 1180px; }
+.main-menu-hero, .home-hero, .resource-hero, .curriculum-hero, .nets-hero, .architecture-page-hero, .mission-map-heading { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 4px 16px rgba(64, 93, 87, .06); }
+.main-menu-hero::after, .home-hero::after, .welcome-decoration, .welcome-page::after { display: none; }
+.main-menu-hero__copy, .hero-copy { padding: clamp(1.25rem, 3vw, 2.5rem); }
+.main-menu-hero h1, .hero-copy h1, .resource-hero h1, .curriculum-hero h1, .nets-hero h1, .architecture-page-hero h1 { color: #354247; line-height: 1.02; }
+.main-menu-hero h1 em, .hero-copy h1 em, .welcome-copy h1 em { color: var(--accent); }
+.main-menu-board, .learning-steps, .resource-detail, .curriculum-section, .saved-designs, .teacher-card, .settings-card, .privacy-card { border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 3px 12px rgba(64, 93, 87, .04); }
+.main-menu-board { padding: clamp(.9rem, 2vw, 1.25rem); }
+.main-menu-grid { gap: .65rem; }
+.main-menu-card { border-radius: 14px; min-height: 82px; }
+.main-menu-card:hover { box-shadow: 0 6px 14px rgba(64, 93, 87, .1); transform: translateY(-1px); }
+.main-menu-note, .learning-note { background: #38504d; border-radius: 15px; }
+.section-heading { margin-bottom: 1rem; }
+.section-heading h2, .quick-launch h2, .resource-library h2 { color: #354247; }
+.mission-card { border-radius: 15px; min-height: 220px; }
+.mission-card:hover:not(.is-locked) { box-shadow: 0 8px 16px rgba(64, 93, 87, .1); transform: translateY(-2px); }
+.challenge-card { border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 5px 18px rgba(64, 93, 87, .06); }
+.choice-button, .builder-layer, .projection-card, .mini-game, .resource-subcard { border-radius: 12px; }
+.geometry-viewer, .resource-model-section { border-radius: 14px; }
+.quick-launch__cards button, .solid-picker { border-radius: 13px; }
+.quick-launch__cards button:hover { box-shadow: 0 5px 13px rgba(64, 93, 87, .08); transform: translateY(-1px); }
+.welcome-page { background: #f7faf8; }
+.welcome-form-card { border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 8px 24px rgba(64, 93, 87, .1); }
+.welcome-form-card input { background: #f7faf8; border-color: var(--line); }
+.welcome-panel { min-height: 500px; }
+
+@media (min-width: 981px) {
+  .topbar nav button { min-height: 40px; }
+  .main-menu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .quick-launch__cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .topbar { align-items: center; gap: .5rem; }
+  .topbar nav { gap: .15rem; margin-top: .15rem; }
+  .topbar nav button { background: #eef5f2; border-radius: 10px; min-height: 42px; padding: .4rem .65rem; }
+  .topbar-actions { gap: .4rem; }
+  .connection-badge { display: inline-block; font-size: .62rem; padding: .3rem .45rem; }
+  .main-menu-page, .content-page, .home-page { padding-left: .8rem; padding-right: .8rem; }
+  .main-menu-hero, .home-hero { display: block; }
+  .main-menu-hero__copy, .hero-copy { padding: 1.2rem; }
+  .main-menu-hero h1 { font-size: clamp(2rem, 10vw, 2.8rem); }
+  .main-menu-hero__art { min-height: 150px; }
+  .main-menu-hero__art .city-map { bottom: -8%; width: 96%; }
+  .main-menu-hero__art .mio-hero { width: 32%; }
+  .main-menu-board { margin-top: .8rem; }
+  .main-menu-grid { gap: .55rem; }
+  .main-menu-card { grid-template-columns: 2.55rem minmax(0, 1fr) 1rem; min-height: 70px; padding: .6rem; }
+  .main-menu-card__icon { border-radius: 10px; font-size: 1.2rem; height: 2.55rem; width: 2.55rem; }
+  .main-menu-card b { font-size: .84rem; }
+  .main-menu-card small { font-size: .67rem; }
+  .main-menu-note { gap: .7rem; margin-top: .8rem; padding: .75rem; }
+  .main-menu-note img { height: 42px; width: 42px; }
+  .main-menu-note b { font-size: .88rem; }
+  .main-menu-note p { font-size: .7rem; }
+  .resource-hero, .curriculum-hero, .nets-hero, .architecture-page-hero, .mission-map-heading { padding: 1.1rem; }
+  .resource-hero h1, .curriculum-hero h1, .nets-hero h1, .architecture-page-hero h1 { font-size: clamp(1.8rem, 9vw, 2.55rem); }
+  .learning-steps, .resource-detail, .curriculum-section, .saved-designs { padding: .9rem; }
+  .section-heading h2 { font-size: 1.55rem; }
+  .solid-picker { min-height: 67px; }
+  .resource-detail__header { align-items: center; }
+  .challenge-card { padding: .95rem; }
+  .challenge-actions button { min-height: 48px; }
+}
+
+@media (max-width: 420px) {
+  .brand { font-size: 1.15rem; }
+  .connection-badge { display: none; }
+  .avatar-button > span { height: 32px; width: 32px; }
+  .main-menu-hero__art { min-height: 128px; }
+  .main-menu-card { grid-template-columns: 2.35rem minmax(0, 1fr) .8rem; }
+  .main-menu-card__icon { height: 2.35rem; width: 2.35rem; }
+  .main-menu-card i { font-size: 1rem; }
+}
+
+@media (max-width: 720px) {
+  html, body { min-width: 0; overflow-x: hidden; }
+  .welcome-page { min-width: 0; width: 100%; }
+  .welcome-copy, .welcome-panel { min-width: 0; }
+  .welcome-form-card, .returning-profiles { max-width: 100%; width: 92%; }
+}
+
 /* Penjelajah model 3D pada pembekalan materi. */
 .resource-model-section { background: linear-gradient(135deg, #edf9f5, #f8f2ff); border: 1px solid #dcece5; border-radius: 19px; margin: 1rem 0; padding: clamp(.85rem, 2vw, 1.1rem); }
 .resource-model-section__copy { align-items: flex-start; display: flex; gap: .75rem; justify-content: space-between; margin: 0 0 .7rem; }
