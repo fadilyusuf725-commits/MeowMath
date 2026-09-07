@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Ikon MeowMath">
+  <rect width="256" height="256" rx="58" fill="#fff4df"/>
+  <path d="M47 95 73 56l23 31M209 95l-26-39-23 31" fill="#ffb166" stroke="#392f3e" stroke-linejoin="round" stroke-width="10"/>
+  <path d="M53 105c0-41 32-69 75-69s75 28 75 69v58c0 36-32 58-75 58s-75-22-75-58z" fill="#ff914d" stroke="#392f3e" stroke-width="10"/>
+  <circle cx="96" cy="130" r="8" fill="#392f3e"/><circle cx="160" cy="130" r="8" fill="#392f3e"/>
+  <path d="M119 148h18l-9 9zM128 157v14M105 171h46" fill="none" stroke="#392f3e" stroke-linecap="round" stroke-width="7"/>
+  <path d="m128 184 45-26v48l-45 26z" fill="#7dd6d0" stroke="#392f3e" stroke-linejoin="round" stroke-width="7"/>
+  <path d="m83 158 45 26v48l-45-26z" fill="#b7eee9" stroke="#392f3e" stroke-linejoin="round" stroke-width="7"/>
+  <path d="m83 158 45-26 45 26-45 26z" fill="#e4fffa" stroke="#392f3e" stroke-linejoin="round" stroke-width="7"/>
+</svg>

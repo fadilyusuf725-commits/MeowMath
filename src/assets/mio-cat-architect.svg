@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc" focusable="false">
+  <title id="title">Mio, maskot kucing arsitek MeowMath</title>
+  <desc id="desc">Seekor kucing oranye ramah memakai helm kuning dan membawa cetak biru bangun ruang.</desc>
+  <defs>
+    <linearGradient id="fur" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB347"/>
+      <stop offset="1" stop-color="#F47A35"/>
+    </linearGradient>
+    <linearGradient id="helmet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE36E"/>
+      <stop offset="1" stop-color="#FFC93D"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#21475B" flood-opacity=".18"/>
+    </filter>
+  </defs>
+
+  <circle cx="160" cy="160" r="142" fill="#E8F7F2"/>
+  <circle cx="46" cy="86" r="18" fill="#FFD96A" opacity=".75"/>
+  <circle cx="275" cy="221" r="24" fill="#A9E1D5" opacity=".85"/>
+  <path d="M41 236c26 28 62 46 102 49" fill="none" stroke="#A9E1D5" stroke-width="10" stroke-linecap="round"/>
+
+  <g filter="url(#shadow)">
+    <!-- Tail behind the body -->
+    <path d="M233 230c40 9 42 61 4 65-22 3-31-14-22-25 6-7 17-4 18 5 11-6 5-27-12-27" fill="none" stroke="url(#fur)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Body and paws -->
+    <path d="M101 199c-16 11-26 34-26 69h170c0-35-10-58-26-69-15-11-34-15-59-15s-44 4-59 15Z" fill="url(#fur)"/>
+    <path d="M106 208c15 10 33 16 54 16s39-6 54-16v60H106Z" fill="#38A9A4"/>
+    <path d="M123 211v57M197 211v57" fill="none" stroke="#F4FFF9" stroke-width="5" opacity=".8"/>
+    <path d="M109 268h102" fill="none" stroke="#206D78" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Ears -->
+    <path d="M96 109 102 62c2-11 14-16 23-8l28 28M196 82l28-28c9-8 21-3 23 8l6 47" fill="url(#fur)" stroke="#D95B2E" stroke-width="5" stroke-linejoin="round"/>
+    <path d="m108 76 5 24 15-13Z" fill="#F6A0A0"/>
+    <path d="m212 87 15 13 5-24Z" fill="#F6A0A0"/>
+
+    <!-- Head -->
+    <path d="M91 124c0-41 31-66 69-66s69 25 69 66v39c0 47-30 73-69 73s-69-26-69-73Z" fill="url(#fur)" stroke="#D95B2E" stroke-width="5"/>
+
+    <!-- Hard hat -->
+    <path d="M103 109c3-39 26-61 57-61s54 22 57 61Z" fill="url(#helmet)" stroke="#D99322" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M96 109h128c5 0 8 4 8 9s-3 9-8 9H96c-5 0-8-4-8-9s3-9 8-9Z" fill="#FFD24D" stroke="#D99322" stroke-width="5"/>
+    <path d="M160 52v45M135 57l8 40M185 57l-8 40" fill="none" stroke="#FFE98F" stroke-width="5" stroke-linecap="round"/>
+    <path d="m160 70 8 12h-16Z" fill="#38A9A4"/>
+
+    <!-- Face -->
+    <path d="M121 142c5-8 16-8 21 0" fill="none" stroke="#21475B" stroke-width="5" stroke-linecap="round"/>
+    <path d="M178 142c5-8 16-8 21 0" fill="none" stroke="#21475B" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="132" cy="153" rx="7" ry="10" fill="#21475B"/>
+    <ellipse cx="188" cy="153" rx="7" ry="10" fill="#21475B"/>
+    <circle cx="134" cy="150" r="2" fill="#FFF"/>
+    <circle cx="190" cy="150" r="2" fill="#FFF"/>
+    <path d="m160 166 9 7-9 7-9-7Z" fill="#EF7E82"/>
+    <path d="M160 180c-5 7-13 8-18 3M160 180c5 7 13 8 18 3" fill="none" stroke="#21475B" stroke-width="4" stroke-linecap="round"/>
+    <path d="M111 172H78M112 182H72M209 172h33M208 182h40" stroke="#21475B" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="115" cy="174" rx="12" ry="7" fill="#F58F91" opacity=".55"/>
+    <ellipse cx="205" cy="174" rx="12" ry="7" fill="#F58F91" opacity=".55"/>
+    <path d="M139 190c7 12 35 12 42 0" fill="none" stroke="#FFF6D9" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Blueprint held by Mio -->
+    <g transform="rotate(-7 159 249)">
+      <rect x="129" y="218" width="77" height="55" rx="7" fill="#DDF8FF" stroke="#287B94" stroke-width="4"/>
+      <path d="M139 229h57M139 239h57M139 249h57M150 221v44M172 221v44" stroke="#72C7DB" stroke-width="2" opacity=".9"/>
+      <path d="m151 247 14-9 14 9-14 9Z" fill="none" stroke="#287B94" stroke-width="3" stroke-linejoin="round"/>
+      <path d="m151 247 14 9v-18M179 247l-14 9" fill="none" stroke="#287B94" stroke-width="3" stroke-linejoin="round"/>
+    </g>
+    <path d="M108 237c10-5 22 2 25 13l5 20h-40c-3-14-2-27 10-33Z" fill="url(#fur)" stroke="#D95B2E" stroke-width="4"/>
+    <path d="M212 237c-10-5-22 2-25 13l-5 20h40c3-14 2-27-10-33Z" fill="url(#fur)" stroke="#D95B2E" stroke-width="4"/>
+    <path d="M109 254c6-5 13-4 19 1M211 254c-6-5-13-4-19 1" fill="none" stroke="#FFF0C5" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <path d="M31 153h20M41 143v20M265 76h16M273 68v16" stroke="#38A9A4" stroke-width="5" stroke-linecap="round"/>
+</svg>
