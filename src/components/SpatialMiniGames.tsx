@@ -223,7 +223,7 @@ export function ProjectionPainter({ challenge, selectedCells, onToggleCell, onCl
         <span className="mini-game__label">Kanvas tampak {challenge.view === 'top' ? 'atas' : challenge.view === 'front' ? 'depan' : 'samping kanan'}</span>
         <p className="projection-painter__axis">{axisHelp}</p>
         <div className="projection-painter__actions">
-          <button type="button" disabled={selected.size === 0} onClick={onUndo}>Hapus pilihan terakhir</button>
+          <button aria-label="Urungkan petak terakhir" type="button" disabled={selected.size === 0} onClick={onUndo}>Hapus pilihan terakhir</button>
           <button type="button" disabled={selected.size === 0} onClick={onClear}>Mulai dari awal</button>
         </div>
         <div className="projection-painter__grid" role="group" aria-label="Petak tampak yang dapat diisi" style={{ gridTemplateColumns: `repeat(${expected.width}, minmax(44px, 1fr))` }}>

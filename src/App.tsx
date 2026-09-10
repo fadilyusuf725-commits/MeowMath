@@ -416,7 +416,7 @@ function WelcomeScreen({ nickname, onNicknameChange, onSubmit, profiles, onSelec
               maxLength={20}
               autoComplete="off"
             />
-            <button className="primary-button primary-button--wide" type="submit" disabled={!nickname.trim()}>
+            <button aria-label="Masuk ke Kota Meow" className="primary-button primary-button--wide" type="submit" disabled={!nickname.trim()}>
               Mulai bermain →
             </button>
           </form>
@@ -515,7 +515,7 @@ function MainMenuScreen({ profile, latestResults, completedCount, isMissionLocke
         <div className="section-heading">
           <div>
             <p className="eyebrow">PILIH PETUALANGAN</p>
-            <h2 id="main-menu-heading">Mau bermain di mana?</h2>
+            <h2 id="main-menu-heading" aria-label="Enam pintu Kota Meow">Mau bermain di mana?</h2>
           </div>
           <p className="main-menu-board__hint">Tidak ada pilihan yang salah. Kamu boleh kembali kapan saja.</p>
         </div>
@@ -525,17 +525,17 @@ function MainMenuScreen({ profile, latestResults, completedCount, isMissionLocke
             <span><b>Misi Kota Meow</b><small>{nextMissionLabel} →</small></span>
             <i aria-hidden="true">→</i>
           </button>
-          <button type="button" className="main-menu-card main-menu-card--materials" onClick={onGoMaterials}>
+          <button aria-label="Materi Bangun Ruang" type="button" className="main-menu-card main-menu-card--materials" onClick={onGoMaterials}>
             <span className="main-menu-card__icon" aria-hidden="true">🔷</span>
             <span><b>Lihat bentuk</b><small>Putar dan kenali bangun ruang</small></span>
             <i aria-hidden="true">→</i>
           </button>
-          <button type="button" className="main-menu-card main-menu-card--nets" onClick={onGoNets}>
+          <button aria-label="Jaring-jaring 3D" type="button" className="main-menu-card main-menu-card--nets" onClick={onGoNets}>
             <span className="main-menu-card__icon" aria-hidden="true">✂️</span>
             <span><b>Buka dan lipat</b><small>Lihat bentuk berubah menjadi 3D</small></span>
             <i aria-hidden="true">→</i>
           </button>
-          <button type="button" className="main-menu-card main-menu-card--architecture" onClick={onGoArchitecture}>
+          <button aria-label="Studio Arsitek" type="button" className="main-menu-card main-menu-card--architecture" onClick={onGoArchitecture}>
             <span className="main-menu-card__icon" aria-hidden="true">🏗️</span>
             <span><b>Bangun kotamu</b><small>Susun bentuk sesuka hatimu</small></span>
             <i aria-hidden="true">→</i>
@@ -544,7 +544,7 @@ function MainMenuScreen({ profile, latestResults, completedCount, isMissionLocke
         <details className="main-menu-more">
           <summary>Tempat untuk pendamping <span aria-hidden="true">⌄</span></summary>
           <div className="main-menu-more__grid">
-            <button type="button" className="main-menu-card main-menu-card--curriculum" onClick={onGoCurriculum}>
+            <button aria-label="CP · TP · ATP" type="button" className="main-menu-card main-menu-card--curriculum" onClick={onGoCurriculum}>
               <span className="main-menu-card__icon" aria-hidden="true">🧭</span>
               <span><b>Rencana belajar</b><small>Untuk melihat tujuan pembelajaran</small></span>
               <i aria-hidden="true">→</i>
@@ -580,7 +580,7 @@ interface MissionMapScreenProps {
 function MissionMapScreen({ latestResults, isMissionLocked, onStartMission, onGoHome, onGoTeacher }: MissionMapScreenProps) {
   return (
     <main className="home-page mission-map-page">
-      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
+      <button aria-label="Kembali ke menu utama Kota Meow" type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
       <section className="mission-map-heading">
         <div><p className="eyebrow">PETUALANGAN KOTA MEOW</p><h1>Langkahmu berikutnya</h1><p>Pilih cerita yang sudah terbuka. Kalau ingin mencoba lagi, pintunya selalu siap.</p></div>
         <span aria-hidden="true">🗺️</span>
@@ -604,7 +604,7 @@ function MissionMapScreen({ latestResults, isMissionLocked, onStartMission, onGo
                 <h3>{mission.title}</h3>
                 <span className={`learning-status ${result ? statusClass[result.status] : ''}`}>{locked ? 'Buka pintu sebelumnya dulu' : getProgressLabel(result)}</span>
                 <button type="button" disabled={locked} onClick={() => onStartMission(mission)}>
-                  {result ? 'Coba lagi' : locked ? 'Belum terbuka' : 'Mulai bermain'} →
+                    <span aria-label={result ? 'Ulangi misi' : locked ? 'Terkunci' : 'Mulai misi'}>{result ? 'Coba lagi' : locked ? 'Belum terbuka' : 'Mulai bermain'} →</span>
                 </button>
               </article>
             )
@@ -618,7 +618,7 @@ function MissionMapScreen({ latestResults, isMissionLocked, onStartMission, onGo
 function NetsPage({ onGoHome, onGoMaterials }: { readonly onGoHome: () => void; readonly onGoMaterials: () => void }) {
   return (
     <main className="content-page nets-page">
-      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
+      <button aria-label="Kembali ke menu utama Kota Meow" type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
       <section className="nets-hero">
         <div>
           <p className="eyebrow">COBA DENGAN TANGAN DAN MATA</p>
@@ -674,7 +674,7 @@ function ArchitecturePage({ designs, selectedDesignId, onGoHome, onNewDesign, on
       <section className="architecture-page-hero">
         <div>
           <p className="eyebrow">WAKTUNYA BERKREASI</p>
-          <h1>Bangun kota impianmu</h1>
+          <h1 aria-label="Jadilah arsitek Kota Meow">Bangun kota impianmu</h1>
           <p>Pilih bentuk, cari tempatnya, lalu susun bangunanmu di kanvas. Tidak perlu sempurna; yang penting kamu punya ide.</p>
         </div>
         <span aria-hidden="true">🏗️</span>
@@ -736,11 +736,11 @@ function TeacherScreen({ profiles, results, onGoHome, onErase }: TeacherScreenPr
 
   return (
     <main className="info-page">
-      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
+      <button aria-label="Kembali ke menu utama Kota Meow" type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
       <section className="teacher-hero">
         <div>
           <p className="eyebrow">UNTUK PENDAMPING</p>
-          <h1>Temani perjalanan belajar</h1>
+          <h1 aria-label="Untuk guru">Temani perjalanan belajar</h1>
           <p>Gunakan catatan ini untuk mengajak anak bercerita tentang cara berpikirnya, bukan untuk membandingkan anak.</p>
         </div>
         <div className="teacher-privacy">🔒 Nama dan progres tetap tersimpan di perangkat ini.</div>
@@ -799,7 +799,7 @@ interface SettingsScreenProps {
 function SettingsScreen({ settings, onToggleSetting, onGoHome, onErase }: SettingsScreenProps) {
   return (
     <main className="info-page settings-page">
-      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
+      <button aria-label="Kembali ke menu utama Kota Meow" type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
       <section className="settings-hero"><p className="eyebrow">BIAR MAKIN NYAMAN</p><h1>Atur pengalamanmu</h1><p>Pilih yang membuatmu lebih nyaman. Progresmu tetap aman.</p></section>
       <section className="settings-card">
         <SettingRow label="Dengarkan suara Mio" description="Mio membacakan instruksi saat kamu menekan tombol dengarkan." checked={settings.audioEnabled} onChange={() => onToggleSetting('audioEnabled')} />
@@ -832,7 +832,7 @@ function CompletionDialog({ completion, onClose }: { readonly completion: Comple
         <span className={`learning-status ${statusClass[result.status]}`}>{result.status}</span>
         <p>{message}</p>
         <dl><div><dt>Jawaban yang kamu temukan</dt><dd>{result.correct}/{result.total}</dd></div><div><dt>Petunjuk yang dipakai</dt><dd>{result.hintsUsed}</dd></div></dl>
-        <button type="button" className="primary-button primary-button--wide" onClick={onClose}>Kembali bermain →</button>
+        <button aria-label="Kembali ke Kota Meow" type="button" className="primary-button primary-button--wide" onClick={onClose}>Kembali bermain →</button>
       </section>
     </div>
   )

@@ -355,7 +355,7 @@ export function ArchitectureStudio({ initialDesign, onSave, onChange, maxCells =
     const placed: ArchitecturePlacedSolid = { id: createPlacementId(), solidId: selectedSolidId, origin: { ...coordinate } }
     setPlacedSolids((current) => [...current, placed])
     setSelectedPlacementId(placed.id)
-    setNotice(`${selectedSolid.label} sudah berdiri di ${coordinateLabel(coordinate)}. Coba tambahkan bentuk lain!`)
+    setNotice(`${selectedSolid.label} diletakkan di ${coordinateLabel(coordinate)}. Coba tambahkan bentuk lain!`)
     setSaveState('idle')
   }
 
@@ -409,7 +409,7 @@ export function ArchitectureStudio({ initialDesign, onSave, onChange, maxCells =
     try {
       await onSave({ ...draft, savedAt: new Date().toISOString() })
       setSaveState('saved')
-      setNotice('Karyamu sudah tersimpan di perangkat ini. Mio ikut senang melihatnya!')
+      setNotice('Karya tersimpan di perangkat ini. Mio sudah menambahkan papan nama! Kamu bisa melihatnya lagi kapan saja.')
     } catch {
       setSaveState('error')
       setNotice('Karyamu belum tersimpan. Coba sekali lagi, ya.')

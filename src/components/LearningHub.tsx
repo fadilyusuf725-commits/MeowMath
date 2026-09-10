@@ -84,7 +84,7 @@ export function LearningHub({ onGoHome, onOpenNets }: LearningHubProps) {
 
   return (
     <main className="content-page learning-hub-page">
-      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
+      <button aria-label="Kembali ke menu utama Kota Meow" type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
       <section className="resource-hero">
         <div>
           <p className="eyebrow">YUK KENALAN DENGAN BENTUK</p>
@@ -220,11 +220,11 @@ export function CurriculumMap({ onGoHome }: CurriculumMapProps) {
   const { officialCp, meowMathProposal, schoolDecision } = curriculumMenuData
   return (
     <main className="content-page curriculum-page">
-      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
+      <button aria-label="Kembali ke menu utama Kota Meow" type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
       <section className="curriculum-hero">
         <div>
           <p className="eyebrow">UNTUK YANG INGIN TAHU LEBIH BANYAK</p>
-          <h1>Ke mana perjalanan ini membawa kita?</h1>
+          <h1 aria-label="Peta Belajar MeowMath">Ke mana perjalanan ini membawa kita?</h1>
           <p>{curriculumMenuData.phaseLabel}. Di sini pendamping bisa melihat arah belajar MeowMath.</p>
         </div>
         <span aria-hidden="true">🧭</span>
@@ -236,7 +236,7 @@ export function CurriculumMap({ onGoHome }: CurriculumMapProps) {
         <section className="curriculum-section curriculum-section--official" aria-labelledby="cp-heading">
           <header>
             <span className="source-label source-label--official">{officialCp.statusLabel}</span>
-            <h2 id="cp-heading">{officialCp.title}</h2>
+            <h2 id="cp-heading" aria-label="Capaian Pembelajaran Matematika Fase C">{officialCp.title}</h2>
             <p>{officialCp.subject} · {officialCp.phase} · Elemen {officialCp.element}</p>
           </header>
           <p className="curriculum-summary">{officialCp.summaryNotice}</p>

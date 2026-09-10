@@ -226,7 +226,7 @@ export function MissionPlayer({ mission, audioEnabled, onExit, onFinish }: Missi
   return (
     <main className="mission-page">
       <header className="mission-header">
-        <button className="text-button" type="button" onClick={onExit}>← Kembali ke Kota Meow</button>
+        <button aria-label="Keluar dari misi" className="text-button" type="button" onClick={onExit}>← Kembali ke Kota Meow</button>
         <div className="mission-progress-wrap" aria-label={`Kemajuan misi ${Math.round(progress)} persen`}>
           <span>{mission.tpCode}</span>
           <div className="mission-progress"><span style={{ width: `${progress}%` }} /></div>
@@ -301,7 +301,7 @@ export function MissionPlayer({ mission, audioEnabled, onExit, onFinish }: Missi
 
         {answerState && (
           <div className={`answer-feedback answer-feedback--${answerState}`}>
-            <strong>{answerState === 'correct' ? 'Hebat, kamu menemukannya!' : 'Belum cocok. Kita coba lagi, ya.'}</strong>
+            <strong>{answerState === 'correct' ? 'Hebat, tepat! Kamu menemukannya!' : 'Belum tepat, coba lagi. Kita pelan-pelan, ya.'}</strong>
             <p>{answerState === 'correct' ? challenge.explanation : 'Dengarkan petunjuk Mio atau amati modelnya sekali lagi.'}</p>
           </div>
         )}
@@ -311,11 +311,11 @@ export function MissionPlayer({ mission, audioEnabled, onExit, onFinish }: Missi
             <button type="button" className="secondary-button" onClick={useHint}>💡 Minta bantuan Mio</button>
           )}
           {answerState === 'correct' ? (
-            <button type="button" className="primary-button" onClick={nextStep}>
+            <button aria-label={step === mission.challenges.length - 1 ? 'Selesaikan misi' : 'Lanjutkan'} type="button" className="primary-button" onClick={nextStep}>
               {step === mission.challenges.length - 1 ? 'Lewati pintu ini' : 'Lanjut'} →
             </button>
           ) : (
-            <button type="button" className="primary-button" onClick={checkAnswer} disabled={!isAnswered()}>
+            <button aria-label="Periksa jawaban" type="button" className="primary-button" onClick={checkAnswer} disabled={!isAnswered()}>
               Cek idemu
             </button>
           )}

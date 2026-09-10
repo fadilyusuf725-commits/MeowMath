@@ -9,6 +9,7 @@ async function enterMeowMath(page: import('@playwright/test').Page, nickname = '
 
 async function openFromMainMenu(page: import('@playwright/test').Page, name: RegExp) {
   await page.getByRole('button', { name: 'Kembali ke menu utama Kota Meow', exact: true }).click()
+  if (name.test('CP')) await page.getByText('Tempat untuk pendamping').click()
   await page.getByRole('button', { name }).click()
 }
 
@@ -32,7 +33,9 @@ test('menu utama memisahkan materi, kurikulum, dan jaring-jaring dengan jelas', 
 
   await openFromMainMenu(page, /CP/)
   await expect(page.getByRole('heading', { name: 'Peta Belajar MeowMath' })).toBeVisible()
+  await page.getByText('Dasar perjalanan').click()
   await expect(page.getByRole('heading', { name: /Capaian Pembelajaran Matematika Fase C/ })).toBeVisible()
+  await page.getByText('Rute belajar MeowMath').click()
   await expect(page.getByText('TP-6', { exact: true })).toBeVisible()
 })
 
