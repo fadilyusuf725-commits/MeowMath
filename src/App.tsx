@@ -455,11 +455,15 @@ function Topbar({ profile, screen, completedCount, isOnline, onGoHome, onGoSetti
         <span aria-hidden="true">🐾</span> MeowMath
       </button>
       <nav aria-label="Navigasi utama">
-        <button type="button" className={screen === 'home' ? 'is-active' : ''} onClick={onGoHome}>Menu Utama</button>
+        <button type="button" className={`topbar-home-link ${screen === 'home' ? 'is-active' : ''}`} onClick={onGoHome}>
+          <span aria-hidden="true">⌂</span>
+          <b>Kota Meow</b>
+          <small>{screen === 'home' ? 'Beranda' : 'Kembali ke beranda'}</small>
+        </button>
       </nav>
       <div className="topbar-actions">
-        <span className={`connection-badge ${isOnline ? '' : 'is-offline'}`}>{isOnline ? '● bisa dimainkan offline' : '● sedang offline'}</span>
-        <button type="button" className="avatar-button" onClick={onSwitchProfile} title="Ganti nama pemain">
+        <span className={`connection-badge ${isOnline ? '' : 'is-offline'}`}><i aria-hidden="true" />{isOnline ? 'Online' : 'Offline'}</span>
+        <button type="button" className="avatar-button" onClick={onSwitchProfile} title="Ganti nama pemain" aria-label={`Ganti nama pemain, sekarang ${profile.nickname}`}>
           <span>{profile.nickname.slice(0, 1).toUpperCase()}</span>
           <b>{profile.nickname}</b>
           <small>{completedCount}/6 petualangan</small>
