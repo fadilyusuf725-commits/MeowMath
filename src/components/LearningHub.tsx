@@ -84,25 +84,25 @@ export function LearningHub({ onGoHome, onOpenNets }: LearningHubProps) {
 
   return (
     <main className="content-page learning-hub-page">
-      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke menu utama</button>
+      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
       <section className="resource-hero">
         <div>
-          <p className="eyebrow">MATERI BANGUN RUANG</p>
+          <p className="eyebrow">YUK KENALAN DENGAN BENTUK</p>
           <h1>{learningResourceMenuIntro.title}</h1>
-          <p>{learningResourceMenuIntro.description}</p>
+          <p>Putar modelnya, perhatikan cirinya, dan cari benda di sekitarmu yang bentuknya mirip.</p>
         </div>
         <div className="resource-hero__cat" aria-hidden="true">🐱<span>◻︎</span></div>
       </section>
 
       <details className="learning-steps learning-steps--collapsible">
-        <summary><span className="learning-steps__icon" aria-hidden="true">💡</span><span><b>Cara belajar Mio</b><small>Empat langkah sederhana</small></span><span aria-hidden="true">⌄</span></summary>
+        <summary><span className="learning-steps__icon" aria-hidden="true">💡</span><span><b>Teman berpikir Mio</b><small>Empat langkah sederhana</small></span><span aria-hidden="true">⌄</span></summary>
         <div className="learning-steps__content" aria-labelledby="learning-steps-heading">
           <div className="section-heading">
             <div>
               <p className="eyebrow">CARA BELAJAR MIO</p>
-              <h2 id="learning-steps-heading">Bukan hafalan bentuk</h2>
+              <h2 id="learning-steps-heading">Kita tidak perlu menghafal</h2>
             </div>
-            <p>Ikuti urutan ini ketika mempelajari setiap bangun ruang.</p>
+            <p>Kita amati bersama, lalu mencoba dengan cara yang paling nyaman.</p>
           </div>
           <ol>
             {learningSteps.map(([number, title, description]) => (
@@ -119,7 +119,7 @@ export function LearningHub({ onGoHome, onOpenNets }: LearningHubProps) {
             <h2 id="resource-library-heading">Pilih bangun yang ingin kamu jelajahi</h2>
           </div>
         </div>
-        <p className="tier-description">Semua bangun ruang ada di satu tempat. Pilih bentuk mana pun, putar modelnya, lalu bandingkan ciri-cirinya.</p>
+        <p className="tier-description">Pilih satu bentuk yang membuatmu penasaran. Putar modelnya, lalu lihat apa yang berubah dari setiap arah.</p>
         <div className="solid-picker-grid">
           {solidResources.map((resource) => (
             <ResourcePicker
@@ -145,9 +145,9 @@ export function LearningHub({ onGoHome, onOpenNets }: LearningHubProps) {
 
         <section className="resource-model-section" aria-labelledby="resource-model-heading">
           <div className="resource-model-section__copy">
-            <p className="mini-label">AMATI DARI BERBAGAI ARAH</p>
+            <p className="mini-label">AJAK MODELNYA BERPUTAR</p>
             <h3 id="resource-model-heading">Putar model {selected.name}</h3>
-            <p>Seret modelnya, lalu coba lihat dari depan, atas, dan samping. Cari bagian yang baru terlihat setelah diputar.</p>
+            <p>Seret modelnya. Coba lihat dari depan, atas, dan samping. Bagian mana yang baru kamu temukan?</p>
           </div>
           <Suspense fallback={<div className="resource-model-loading" aria-busy="true">Mio sedang menyiapkan model 3D…</div>}>
             <SolidExplorer3D key={selected.id} solidId={selected.id} label={selected.name} />
@@ -163,7 +163,7 @@ export function LearningHub({ onGoHome, onOpenNets }: LearningHubProps) {
         )}
 
         <details className="resource-more">
-          <summary>Kenali lebih jauh <span aria-hidden="true">⌄</span></summary>
+          <summary>Kalau masih penasaran <span aria-hidden="true">⌄</span></summary>
           <div className="resource-detail__grid">
             <section className="resource-subcard" aria-labelledby="properties-heading">
               <p className="mini-label">CIRI-CIRI</p>
@@ -197,7 +197,7 @@ export function LearningHub({ onGoHome, onOpenNets }: LearningHubProps) {
           </div>
 
           <details className="formula-details">
-            <summary>Referensi rumus pengayaan (bukan target penilaian v1)</summary>
+            <summary>Kalau penasaran dengan rumus</summary>
             <p>Rumus di bawah tersedia sebagai perluasan pengetahuan. Misi inti MeowMath tetap berfokus pada bentuk, susunan, dan visualisasi spasial.</p>
             <div>
               {selected.formulas.map((formula) => (
@@ -220,19 +220,19 @@ export function CurriculumMap({ onGoHome }: CurriculumMapProps) {
   const { officialCp, meowMathProposal, schoolDecision } = curriculumMenuData
   return (
     <main className="content-page curriculum-page">
-      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke menu utama</button>
+      <button type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
       <section className="curriculum-hero">
         <div>
-          <p className="eyebrow">TRANSPARANSI PERENCANAAN BELAJAR</p>
-          <h1>{curriculumMenuData.title}</h1>
-          <p>{curriculumMenuData.phaseLabel}</p>
+          <p className="eyebrow">UNTUK YANG INGIN TAHU LEBIH BANYAK</p>
+          <h1>Ke mana perjalanan ini membawa kita?</h1>
+          <p>{curriculumMenuData.phaseLabel}. Di sini pendamping bisa melihat arah belajar MeowMath.</p>
         </div>
         <span aria-hidden="true">🧭</span>
       </section>
-      <aside className="curriculum-notice"><b>Bedakan sumbernya.</b> {curriculumMenuData.curriculumNotice}</aside>
+      <aside className="curriculum-notice"><b>Catatan untuk pendamping.</b> {curriculumMenuData.curriculumNotice}</aside>
 
       <details className="curriculum-details">
-        <summary><span aria-hidden="true">🧭</span><span><b>Acuan resmi</b><small>CP Matematika Fase C</small></span><span aria-hidden="true">⌄</span></summary>
+        <summary><span aria-hidden="true">🧭</span><span><b>Dasar perjalanan</b><small>Acuan Matematika Fase C</small></span><span aria-hidden="true">⌄</span></summary>
         <section className="curriculum-section curriculum-section--official" aria-labelledby="cp-heading">
           <header>
             <span className="source-label source-label--official">{officialCp.statusLabel}</span>
@@ -260,7 +260,7 @@ export function CurriculumMap({ onGoHome }: CurriculumMapProps) {
       </details>
 
       <details className="curriculum-details">
-        <summary><span aria-hidden="true">🗺️</span><span><b>Rencana belajar MeowMath</b><small>TP dan ATP yang digunakan</small></span><span aria-hidden="true">⌄</span></summary>
+        <summary><span aria-hidden="true">🗺️</span><span><b>Rute belajar MeowMath</b><small>Tujuan dan langkah yang dipakai</small></span><span aria-hidden="true">⌄</span></summary>
         <section className="curriculum-section curriculum-section--proposal" aria-labelledby="tp-atp-heading">
           <header>
             <span className="source-label source-label--proposal">{meowMathProposal.statusLabel}</span>

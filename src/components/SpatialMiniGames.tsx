@@ -51,14 +51,14 @@ export function MatchDropGame({
     <section className="mini-game match-game" data-testid={`mini-game-${challenge.id}`} aria-label="Mini game memasangkan kartu">
       <div className="mini-game__intro">
         <span aria-hidden="true">🐾</span>
-        <p><b>Caranya:</b> seret kartu ke gerbang. Jika memakai layar sentuh, ketuk kartu lalu ketuk gerbang.</p>
+        <p><b>Mulainya begini:</b> seret kartu ke tempat yang cocok. Di layar sentuh, ketuk kartu lalu ketuk tempatnya.</p>
       </div>
       <p className="mini-game__status" role="status" aria-live="polite" data-testid="mini-game-status">
         {feedback || (selectedItem
           ? `${selectedItem.label} terpilih. Sekarang pilih gerbang tujuan.`
           : placedCount === challenge.items.length
             ? 'Semua kartu sudah ditempatkan. Periksa pilihanmu!'
-            : `${placedCount} dari ${challenge.items.length} kartu sudah ditempatkan.`)}
+            : `Kamu sudah menempatkan ${placedCount} dari ${challenge.items.length} kartu.`)}
       </p>
       {selectedItem && <button
         type="button"
@@ -68,10 +68,10 @@ export function MatchDropGame({
           onSelectItem(null)
           setFeedback(`Pilihan ${selectedItem.label} dibatalkan.`)
         }}
-      >Batal pilih {selectedItem.label}</button>}
+      >Batalkan pilihan {selectedItem.label}</button>}
       <div className="match-game__layout">
         <div className="match-game__cards" aria-label="Kartu benda atau petunjuk">
-          <p className="mini-game__label">Kartu Mio</p>
+          <p className="mini-game__label">Kartu yang perlu dicari tempatnya</p>
           {challenge.items.map((item) => {
             const assignedTarget = assignments[item.id]
             const target = challenge.targets.find((candidate) => candidate.id === assignedTarget)
@@ -96,13 +96,13 @@ export function MatchDropGame({
               >
                 <span aria-hidden="true">{item.emoji ?? '🧩'}</span>
                 <b>{item.label}</b>
-                <small>{target ? `→ ${target.label}` : 'Pilih atau seret'}</small>
+                <small>{target ? `→ ${target.label}` : 'Ketuk atau seret'}</small>
               </button>
             )
           })}
         </div>
         <div className="match-game__targets" aria-label="Gerbang pasangan">
-          <p className="mini-game__label">Gerbang tujuan</p>
+          <p className="mini-game__label">Tempat yang cocok</p>
           {challenge.targets.map((target) => {
             const placedItems = challenge.items.filter((item) => assignments[item.id] === target.id)
             const canReceive = Boolean(selectedItemId || draggingItemId)
@@ -123,7 +123,7 @@ export function MatchDropGame({
                 <span className="match-target__title"><i aria-hidden="true">{target.emoji ?? '🏠'}</i><b>{target.label}</b></span>
                 {target.helper && <small>{target.helper}</small>}
                 <span className="match-target__items">
-                  {placedItems.length > 0 ? placedItems.map((item) => <span key={item.id}>{item.emoji ?? '🧩'} {item.label}</span>) : <em>Letakkan kartu di sini</em>}
+                  {placedItems.length > 0 ? placedItems.map((item) => <span key={item.id}>{item.emoji ?? '🧩'} {item.label}</span>) : <em>Taruh kartu di sini</em>}
                 </span>
               </button>
             )
@@ -161,8 +161,8 @@ export function SequenceOrderGame({ challenge, order, onMove, onMoveBefore }: Se
 
   return (
     <section className="mini-game sequence-game" data-testid={`mini-game-${challenge.id}`} aria-label="Mini game mengurutkan langkah">
-      <div className="mini-game__intro"><span aria-hidden="true">🧭</span><p><b>Caranya:</b> seret langkah ke tempat yang sesuai atau gunakan tombol panah untuk memindahkannya.</p></div>
-      <p className="mini-game__status" role="status" aria-live="polite" data-testid="mini-game-status">{feedback || `Urutkan ${orderedItems.length} kartu dari langkah pertama sampai terakhir.`}</p>
+      <div className="mini-game__intro"><span aria-hidden="true">🧭</span><p><b>Mulainya begini:</b> susun langkah dari awal sampai akhir. Kamu bisa menyeretnya atau memakai tombol panah.</p></div>
+      <p className="mini-game__status" role="status" aria-live="polite" data-testid="mini-game-status">{feedback || `Ayo susun ${orderedItems.length} langkah dari awal sampai akhir.`}</p>
       <div className="sequence-game__anchors" aria-hidden="true"><span>1. Pertama</span><span>Terakhir</span></div>
       <ol className="sequence-game__list">
         {orderedItems.map((item, index) => (
@@ -186,7 +186,7 @@ export function SequenceOrderGame({ challenge, order, onMove, onMoveBefore }: Se
             onDragEnd={() => { draggingItem.current = null }}
           >
             <span className="sequence-card__number" aria-hidden="true">{index + 1}</span>
-            <span className="sequence-card__copy"><b>{item.emoji ?? '🧱'} {item.label}</b><small>Seret atau gunakan panah.</small></span>
+            <span className="sequence-card__copy"><b>{item.emoji ?? '🧱'} {item.label}</b><small>Geser atau gunakan panah.</small></span>
             <span className="sequence-card__buttons">
               <button type="button" aria-label={`Naikkan ${item.label}`} disabled={index === 0} onClick={() => moveItem(item, index, 'up')}>↑</button>
               <button type="button" aria-label={`Turunkan ${item.label}`} disabled={index === orderedItems.length - 1} onClick={() => moveItem(item, index, 'down')}>↓</button>
@@ -217,14 +217,14 @@ export function ProjectionPainter({ challenge, selectedCells, onToggleCell, onCl
       : 'Kolom dari depan ke belakang. Baris 1 berada paling bawah.'
   return (
     <section className="mini-game projection-painter" data-testid={`mini-game-${challenge.id}`} aria-label="Mini game menggambar tampak bangun">
-      <div className="mini-game__intro"><span aria-hidden="true">🖍️</span><p><b>Nyalakan petak</b> yang tampak terisi. Ketuk lagi jika ingin menghapusnya.</p></div>
-      <p className="mini-game__status" role="status" data-testid="mini-game-status">{selected.size} petak sudah kamu nyalakan.</p>
+      <div className="mini-game__intro"><span aria-hidden="true">🖍️</span><p><b>Warnai petak</b> yang kamu lihat terisi. Ketuk lagi jika ingin menghapusnya.</p></div>
+      <p className="mini-game__status" role="status" data-testid="mini-game-status">Kamu sudah memilih {selected.size} petak.</p>
       <div className="projection-painter__frame">
         <span className="mini-game__label">Kanvas tampak {challenge.view === 'top' ? 'atas' : challenge.view === 'front' ? 'depan' : 'samping kanan'}</span>
         <p className="projection-painter__axis">{axisHelp}</p>
         <div className="projection-painter__actions">
-          <button type="button" disabled={selected.size === 0} onClick={onUndo}>Urungkan petak terakhir</button>
-          <button type="button" disabled={selected.size === 0} onClick={onClear}>Kosongkan semua</button>
+          <button type="button" disabled={selected.size === 0} onClick={onUndo}>Hapus pilihan terakhir</button>
+          <button type="button" disabled={selected.size === 0} onClick={onClear}>Mulai dari awal</button>
         </div>
         <div className="projection-painter__grid" role="group" aria-label="Petak tampak yang dapat diisi" style={{ gridTemplateColumns: `repeat(${expected.width}, minmax(44px, 1fr))` }}>
           {Array.from({ length: expected.width * expected.height }, (_, index) => {

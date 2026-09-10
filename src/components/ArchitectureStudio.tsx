@@ -276,7 +276,7 @@ export function ArchitectureStudio({ initialDesign, onSave, onChange, maxCells =
   const [selectedPlacementId, setSelectedPlacementId] = useState<string | null>(null)
   const [view, setView] = useState<CameraView>('isometric')
   const [saveState, setSaveState] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
-  const [notice, setNotice] = useState('Pilih satu bangun, atur X–Y–Z, lalu tekan Letakkan bangun.')
+  const [notice, setNotice] = useState('Pilih satu bentuk, cari titiknya, lalu letakkan di kotamu.')
   const initialKey = JSON.stringify(initialDesign ?? {})
 
   useEffect(() => {
@@ -289,7 +289,7 @@ export function ArchitectureStudio({ initialDesign, onSave, onChange, maxCells =
     setCoordinate(restoredPlacements[0]?.origin ?? { x: 0, y: 0, z: 0 })
     setSelectedPlacementId(null)
     setSaveState('idle')
-    setNotice(initialDesign ? 'Karya tersimpan dimuat. Ketuk bangun untuk memilih atau letakkan bangun baru.' : 'Pilih satu bangun, atur X–Y–Z, lalu tekan Letakkan bangun.')
+    setNotice(initialDesign ? 'Karyamu sudah dibuka. Ketuk bangunan untuk memindahkannya atau tambahkan ide baru.' : 'Pilih satu bentuk, cari titiknya, lalu letakkan di kotamu.')
   }, [initialKey])
 
   const selectedSolid = getArchitectureSolid(selectedSolidId)
@@ -315,7 +315,7 @@ export function ArchitectureStudio({ initialDesign, onSave, onChange, maxCells =
     setSelectedSolidId(id)
     setSelectedPlacementId(null)
     setSaveState('idle')
-    setNotice(`${getArchitectureSolid(id).label} dipilih. Tentukan titik X–Y–Z untuk meletakkannya.`)
+    setNotice(`${getArchitectureSolid(id).label} siap dibangun. Sekarang cari titik yang kamu suka.`)
   }
 
   function updateCoordinate(axis: CoordinateAxis, amount: number) {
@@ -331,7 +331,7 @@ export function ArchitectureStudio({ initialDesign, onSave, onChange, maxCells =
     setSelectedSolidId(placement.solidId)
     setCoordinate({ ...placement.origin })
     setSaveState('idle')
-    setNotice(`${getArchitectureSolid(placement.solidId).label} di ${coordinateLabel(placement.origin)} dipilih. Atur koordinat lain lalu tekan Pindahkan bangun.`)
+    setNotice(`${getArchitectureSolid(placement.solidId).label} di ${coordinateLabel(placement.origin)} dipilih. Geser titiknya kalau ingin memindahkannya.`)
   }
 
   function placeOrMoveSolid() {
@@ -339,23 +339,23 @@ export function ArchitectureStudio({ initialDesign, onSave, onChange, maxCells =
       if (placementCheck.issue.code === 'OCCUPIED') {
         const other = getArchitectureSolid(placementCheck.issue.conflict.solidId)
         setNotice(`${coordinateLabel(coordinate)} sudah terpakai oleh ${other.label}. Pilih koordinat X, Y, atau Z lain agar bangun tidak bertumpang tindih.`)
-      } else setNotice('Koordinat tersebut berada di luar kanvas. Pilih angka X, Y, dan Z yang tersedia.')
+      } else setNotice('Titik itu berada di luar kanvas. Coba pilih angka X, Y, dan Z yang tersedia.')
       return
     }
     if (selectedPlacement) {
       setPlacedSolids((current) => current.map((placement) => placement.id === selectedPlacement.id ? { ...placement, origin: { ...coordinate } } : placement))
-      setNotice(`${getArchitectureSolid(selectedPlacement.solidId).label} dipindahkan ke ${coordinateLabel(coordinate)}.`)
+      setNotice(`${getArchitectureSolid(selectedPlacement.solidId).label} pindah ke ${coordinateLabel(coordinate)}.`)
       setSaveState('idle')
       return
     }
     if (!canAddAnother) {
-      setNotice(`Kota Meow sudah memiliki ${capacity} bangun. Hapus satu bangun dahulu jika ingin menambahkan ide baru.`)
+      setNotice(`Kotamu sudah penuh dengan ${capacity} bangunan. Hapus satu dulu kalau ingin mencoba ide baru.`)
       return
     }
     const placed: ArchitecturePlacedSolid = { id: createPlacementId(), solidId: selectedSolidId, origin: { ...coordinate } }
     setPlacedSolids((current) => [...current, placed])
     setSelectedPlacementId(placed.id)
-    setNotice(`${selectedSolid.label} diletakkan di ${coordinateLabel(coordinate)}. Coba letakkan bentuk lain di titik berbeda!`)
+    setNotice(`${selectedSolid.label} sudah berdiri di ${coordinateLabel(coordinate)}. Coba tambahkan bentuk lain!`)
     setSaveState('idle')
   }
 
@@ -370,7 +370,7 @@ export function ArchitectureStudio({ initialDesign, onSave, onChange, maxCells =
 
   function addQuickExample() {
     if (placedSolids.length > 0) {
-      setNotice('Contoh cepat hanya untuk kanvas kosong. Hapus semua bangun jika ingin memulai dari contoh baru.')
+      setNotice('Contoh cepat paling pas dipakai di kanvas kosong. Hapus bangunan dulu kalau ingin melihat contoh baru.')
       return
     }
     const examples: ArchitectureSolidId[] = ['kubus', 'tabung', 'limas-segiempat', 'bola', 'kerucut']
@@ -384,35 +384,35 @@ export function ArchitectureStudio({ initialDesign, onSave, onChange, maxCells =
     setSelectedPlacementId(next[0]?.id ?? null)
     setSelectedSolidId(next[0]?.solidId ?? 'kubus')
     setCoordinate(next[0]?.origin ?? { x: 0, y: 0, z: 0 })
-    setNotice('Contoh Kota Meow sudah dibuat. Ketuk bangun untuk memindahkannya atau tambahkan bentukmu sendiri.')
+    setNotice('Contoh kota sudah siap. Ketuk bangunan untuk memindahkannya atau tambahkan bentukmu sendiri.')
     setSaveState('idle')
   }
 
   function clearAllSolids() {
     if (placedSolids.length === 0) {
-      setNotice('Kanvas sudah kosong. Pilih bentuk pertama untuk memulai.')
+      setNotice('Kanvas masih kosong. Pilih bentuk pertama untuk mulai membangun.')
       return
     }
     setPlacedSolids([])
     setSelectedPlacementId(null)
     setCoordinate({ x: 0, y: 0, z: 0 })
-    setNotice('Semua bangun telah dihapus. Kanvas siap untuk ide baru!')
+    setNotice('Semua bangunan sudah dihapus. Kanvas siap untuk ide barumu!')
     setSaveState('idle')
   }
 
   async function saveDesign() {
     if (placedSolids.length === 0) {
-      setNotice('Letakkan setidaknya satu bangun sebelum menyimpan karya.')
+      setNotice('Letakkan setidaknya satu bentuk sebelum menyimpan karyamu.')
       return
     }
     setSaveState('saving')
     try {
       await onSave({ ...draft, savedAt: new Date().toISOString() })
       setSaveState('saved')
-      setNotice('Karya tersimpan di perangkat ini. Mio sudah menambahkan papan nama!')
+      setNotice('Karyamu sudah tersimpan di perangkat ini. Mio ikut senang melihatnya!')
     } catch {
       setSaveState('error')
-      setNotice('Karya belum tersimpan. Coba lagi sebentar, ya.')
+      setNotice('Karyamu belum tersimpan. Coba sekali lagi, ya.')
     }
   }
 

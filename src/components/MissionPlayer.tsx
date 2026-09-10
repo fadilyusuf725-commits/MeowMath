@@ -49,13 +49,13 @@ function viewName(view: CameraView): string {
 
 function challengeModeLabel(challenge: Challenge): string {
   switch (challenge.type) {
-    case 'choice': return 'PILIH JAWABAN'
-    case 'build': return 'MINI GAME SUSUN BLOK'
-    case 'projection': return 'PILIH TAMPAK'
-    case 'projection-draw': return 'MINI GAME GAMBAR TAMPAK'
-    case 'match': return 'MINI GAME PASANGKAN'
-    case 'sequence': return 'MINI GAME URUTKAN'
-    case 'map': return 'MINI GAME PETA'
+    case 'choice': return 'PILIHAN MIO'
+    case 'build': return 'SUSUN BLOK'
+    case 'projection': return 'LIHAT DARI ARAH LAIN'
+    case 'projection-draw': return 'GAMBAR YANG KAMU LIHAT'
+    case 'match': return 'PASANGKAN YANG COCOK'
+    case 'sequence': return 'SUSUN LANGKAHNYA'
+    case 'map': return 'CARI DI PETA'
   }
 }
 
@@ -226,7 +226,7 @@ export function MissionPlayer({ mission, audioEnabled, onExit, onFinish }: Missi
   return (
     <main className="mission-page">
       <header className="mission-header">
-        <button className="text-button" type="button" onClick={onExit}>← Kembali ke menu utama</button>
+        <button className="text-button" type="button" onClick={onExit}>← Kembali ke Kota Meow</button>
         <div className="mission-progress-wrap" aria-label={`Kemajuan misi ${Math.round(progress)} persen`}>
           <span>{mission.tpCode}</span>
           <div className="mission-progress"><span style={{ width: `${progress}%` }} /></div>
@@ -254,9 +254,9 @@ export function MissionPlayer({ mission, audioEnabled, onExit, onFinish }: Missi
             className="audio-button"
             onClick={() => speakIndonesian(narratedText, audioEnabled)}
             disabled={!audioEnabled}
-            title={audioEnabled ? 'Bacakan instruksi' : 'Audio sedang dimatikan'}
+            title={audioEnabled ? 'Dengarkan suara Mio' : 'Suara Mio sedang dimatikan'}
           >
-            🔊 Dengarkan
+            🔊 Dengarkan Mio
           </button>
         </div>
         <h2>{challenge.prompt}</h2>
@@ -294,29 +294,29 @@ export function MissionPlayer({ mission, audioEnabled, onExit, onFinish }: Missi
 
         {hintLevel > 0 && (
           <div className="hint-box">
-            <strong>Petunjuk Mio {hintLevel}</strong>
+            <strong>Mio punya petunjuk {hintLevel}</strong>
             <p>{challenge.hints[hintLevel - 1]}</p>
           </div>
         )}
 
         {answerState && (
           <div className={`answer-feedback answer-feedback--${answerState}`}>
-            <strong>{answerState === 'correct' ? 'Hebat, tepat!' : 'Belum tepat, coba lagi.'}</strong>
-            <p>{answerState === 'correct' ? challenge.explanation : 'Gunakan petunjuk Mio atau amati model dengan lebih pelan.'}</p>
+            <strong>{answerState === 'correct' ? 'Hebat, kamu menemukannya!' : 'Belum cocok. Kita coba lagi, ya.'}</strong>
+            <p>{answerState === 'correct' ? challenge.explanation : 'Dengarkan petunjuk Mio atau amati modelnya sekali lagi.'}</p>
           </div>
         )}
 
         <div className="challenge-actions">
           {answerState !== 'correct' && hintLevel < challenge.hints.length && (
-            <button type="button" className="secondary-button" onClick={useHint}>💡 Minta petunjuk</button>
+            <button type="button" className="secondary-button" onClick={useHint}>💡 Minta bantuan Mio</button>
           )}
           {answerState === 'correct' ? (
             <button type="button" className="primary-button" onClick={nextStep}>
-              {step === mission.challenges.length - 1 ? 'Selesaikan misi' : 'Lanjutkan'} →
+              {step === mission.challenges.length - 1 ? 'Lewati pintu ini' : 'Lanjut'} →
             </button>
           ) : (
             <button type="button" className="primary-button" onClick={checkAnswer} disabled={!isAnswered()}>
-              Periksa jawaban
+              Cek idemu
             </button>
           )}
         </div>
