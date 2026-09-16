@@ -378,12 +378,8 @@ button, input { min-height: 44px; }
 
 /* Penjelajah model 3D pada pembekalan materi. */
 .resource-model-section { background: linear-gradient(135deg, #edf9f5, #f8f2ff); border: 1px solid #dcece5; border-radius: 19px; margin: 1rem 0; padding: clamp(.85rem, 2vw, 1.1rem); }
-.resource-model-section__copy { align-items: flex-start; display: flex; gap: .75rem; justify-content: space-between; margin: 0 0 .7rem; }
-.resource-model-section__copy p { color: #6a7c76; font-size: .78rem; line-height: 1.42; margin: .2rem 0 0; max-width: 650px; }
-.resource-model-section__copy h3 { color: #4b5d59; font-size: 1.05rem; margin: 0; }
 .resource-model-loading { align-items: center; background: rgba(255,255,255,.72); border-radius: 14px; color: #67756f; display: flex; font-size: .82rem; font-weight: 800; justify-content: center; min-height: 250px; }
 .resource-lab-section .geometry-explorer { margin: 1rem 0; }
-@media (max-width: 720px) { .resource-model-section__copy { display: block; }.resource-model-section__copy p { margin-top: .35rem; } }
 
 /* Menu utama: setiap ruang belajar berdiri sebagai satu pilihan yang jelas. */
 .main-menu-page { margin: 0 auto; max-width: 1240px; padding: clamp(1.15rem, 3vw, 2.3rem) clamp(1rem, 5vw, 4rem) 4rem; }
