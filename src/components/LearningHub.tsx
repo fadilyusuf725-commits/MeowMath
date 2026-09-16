@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react'
+import { useState } from 'react'
 import {
   curriculumMenuData,
   learningResourceMenuIntro,
@@ -6,9 +6,6 @@ import {
   type SolidId,
   type SolidResource,
 } from '../content/learningResources'
-
-const SolidExplorer3D = lazy(async () => ({ default: (await import('./SolidExplorer3D')).SolidExplorer3D }))
-const GeometryExplorer = lazy(async () => ({ default: (await import('./GeometryExplorer')).GeometryExplorer }))
 
 interface LearningHubProps {
   readonly onGoHome: () => void
@@ -141,27 +138,6 @@ export function LearningHub({ onGoHome, onOpenNets }: LearningHubProps) {
             <p>{selected.definition}</p>
           </div>
         </header>
-        <p className="why-learn"><b>Mengapa dipelajari?</b> {selected.whyLearnThis}</p>
-
-        <section className="resource-model-section" aria-labelledby="resource-model-heading">
-          <div className="resource-model-section__copy">
-            <p className="mini-label">AJAK MODELNYA BERPUTAR</p>
-            <h3 id="resource-model-heading">Putar model {selected.name}</h3>
-            <p>Seret modelnya. Coba lihat dari depan, atas, dan samping. Bagian mana yang baru kamu temukan?</p>
-          </div>
-          <Suspense fallback={<div className="resource-model-loading" aria-busy="true">Mio sedang menyiapkan model 3D…</div>}>
-            <SolidExplorer3D key={selected.id} solidId={selected.id} label={selected.name} />
-          </Suspense>
-        </section>
-
-        {selected.id === 'kubus' && (
-          <section className="resource-lab-section" aria-label="Laboratorium bagian kubus">
-            <Suspense fallback={<div className="resource-model-loading" aria-busy="true">Mio sedang menyiapkan Laboratorium Kubus…</div>}>
-              <GeometryExplorer />
-            </Suspense>
-          </section>
-        )}
-
         <details className="resource-more">
           <summary>Kalau masih penasaran <span aria-hidden="true">⌄</span></summary>
           <div className="resource-detail__grid">

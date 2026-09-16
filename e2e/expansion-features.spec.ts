@@ -45,8 +45,6 @@ test('materi dan jaring-jaring memberi model 3D untuk bangun pengayaan', async (
   await expect(page.getByRole('button', { name: 'Prisma Segiempat sisi datar', exact: true })).toBeVisible()
   await expect(page.getByRole('button', { name: 'Limas Segitiga sisi datar', exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Limas Segiempat sisi datar', exact: true }).click()
-  await expect(page.getByTestId('solid-explorer-limas-segiempat')).toBeVisible()
-  await page.getByRole('button', { name: 'Tampilkan Limas Segiempat dari arah atas', exact: true }).click()
 
   await openFromMainMenu(page, /Jaring-jaring 3D/)
   await page.getByRole('tab', { name: 'Tabung', exact: true }).click()
