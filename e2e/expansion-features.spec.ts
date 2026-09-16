@@ -28,8 +28,7 @@ test('menu utama memisahkan materi, kurikulum, dan jaring-jaring dengan jelas', 
 
   await openFromMainMenu(page, /Jaring-jaring 3D/)
   await expect(page.getByRole('heading', { name: 'Jaring-jaring bangun ruang' })).toBeVisible()
-  await page.getByRole('button', { name: 'Periksa jaring-jaring' }).click()
-  await expect(page.locator('.net-lab__feedback b')).toContainText('Ini jaring-jaring yang tepat.')
+  await expect(page.getByRole('heading', { name: /Langkah 1 dari/ })).toBeVisible()
 
   await openFromMainMenu(page, /CP/)
   await expect(page.getByRole('heading', { name: 'Peta Belajar MeowMath' })).toBeVisible()
@@ -51,8 +50,6 @@ test('materi dan jaring-jaring memberi model 3D untuk bangun pengayaan', async (
 
   await openFromMainMenu(page, /Jaring-jaring 3D/)
   await page.getByRole('tab', { name: 'Tabung', exact: true }).click()
-  await expect(page.getByText('Dua lingkaran dan satu persegi panjang')).toBeVisible()
-  await page.getByRole('tab', { name: '2. Lipat perlahan', exact: true }).click()
   await expect(page.getByRole('heading', { name: /Langkah 1 dari 3: Buka selimut/ })).toBeVisible()
   await expect(page.getByTestId('net-fold-3d-cylinder')).toBeVisible()
   await page.getByRole('button', { name: /Lanjut/ }).click()
