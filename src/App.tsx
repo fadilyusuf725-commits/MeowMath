@@ -326,7 +326,10 @@ function App() {
       {screen === 'materials' && <LearningHub onGoHome={() => setScreen('home')} onOpenNets={() => setScreen('nets')} />}
       {screen === 'curriculum' && <CurriculumMap onGoHome={() => setScreen('home')} />}
       {screen === 'nets' && (
-        <NetsPage onGoHome={() => setScreen('home')} />
+        <NetsPage
+          onGoHome={() => setScreen('home')}
+          onGoMaterials={() => setScreen('materials')}
+        />
       )}
       {screen === 'architecture' && (
         <ArchitecturePage
@@ -612,7 +615,7 @@ function MissionMapScreen({ latestResults, isMissionLocked, onStartMission, onGo
   )
 }
 
-function NetsPage({ onGoHome }: { readonly onGoHome: () => void }) {
+function NetsPage({ onGoHome, onGoMaterials }: { readonly onGoHome: () => void; readonly onGoMaterials: () => void }) {
   return (
     <main className="content-page nets-page">
       <button aria-label="Kembali ke menu utama Kota Meow" type="button" className="text-button" onClick={onGoHome}>← Kembali ke Kota Meow</button>
@@ -624,9 +627,21 @@ function NetsPage({ onGoHome }: { readonly onGoHome: () => void }) {
         </div>
         <span aria-hidden="true">✂️</span>
       </section>
+      <details className="nets-method-details">
+        <summary><span aria-hidden="true">💡</span><span><b>Butuh ide?</b><small>Tiga cara untuk mulai melihat</small></span><span aria-hidden="true">⌄</span></summary>
+        <section className="nets-method" aria-label="Cara mengamati jaring-jaring">
+          <article><span>1</span><b>Hitung bersama</b><p>Berapa bidang yang kamu lihat?</p></article>
+          <article><span>2</span><b>Cari pasangan</b><p>Bidang mana yang bentuk dan ukurannya cocok?</p></article>
+          <article><span>3</span><b>Bayangkan lipatan</b><p>Menurutmu, akan jadi bangun apa?</p></article>
+        </section>
+      </details>
       <Suspense fallback={<LoadingScreen />}>
         <NetExplorer />
       </Suspense>
+      <section className="net-scope-note">
+        <div><span aria-hidden="true">🐾</span><h2>Catatan kecil dari Mio</h2><p>Setiap bangun punya cara sendiri untuk dilipat. Bola istimewa: permukaannya melengkung, jadi tidak bisa dibuka menjadi satu jaring-jaring datar yang tepat.</p></div>
+        <button type="button" className="secondary-button" onClick={onGoMaterials}>Lihat bentuk lainnya →</button>
+      </section>
     </main>
   )
 }

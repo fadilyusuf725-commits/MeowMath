@@ -9,7 +9,7 @@
 | Mata pelajaran | Matematika |
 | Fase | C (umumnya kelas V–VI SD/MI/Program Paket A) |
 | Elemen | Geometri |
-| Sasaran MeowMath v1 | Kelas V, sebagai fondasi menuju capaian akhir Fase C |
+| Sasaran MeowMath v1 | Kelas VI, sebagai penguatan dan penerapan capaian akhir Fase C |
 | Topik | Kubus, balok, gabungannya, visualisasi spasial, dan lokasi pada peta berpetak |
 | Karakter pembelajaran | Eksplorasi dan penalaran spasial melalui model digital yang dapat dimanipulasi |
 | Materi perluasan v1 | Satu pustaka bangun ruang, jaring-jaring lipat 3D, prisma segitiga/segiempat, limas segitiga/segiempat, tabung, kerucut, dan bola sebagai resource perluasan konsep |
@@ -61,50 +61,50 @@ ATP MeowMath di bawah adalah contoh alur yang boleh dipakai, dimodifikasi, atau 
 | Membandingkan karakteristik antarbangun ruang | Murid membandingkan kubus dan balok melalui bidang/sisi, rusuk, titik sudut, serta bentuk sisi. | Benda sehari-hari disebut **mirip kubus** atau **mirip balok**, bukan dianggap bangun matematika ideal. |
 | Menentukan lokasi pada peta berpetak | Murid meletakkan bangunan Kota Meow pada koordinat/lokasi berpetak dan mengikuti petunjuk posisi. | Peta berpetak dipakai sebagai penguatan lokasi spasial; tidak diperluas menjadi koordinat Kartesius formal. |
 
-## 4. Tujuan Pembelajaran (TP) MeowMath
+## 4. Tujuan Pembelajaran (TP) MeowMath Kelas VI
 
-TP berikut ditulis sebagai tujuan umum unit/fase, bukan tujuan kegiatan harian. Setiap TP memadukan kompetensi yang dapat ditunjukkan murid dengan lingkup materi yang jelas.
+TP berikut ditulis sebagai tujuan umum pembelajaran Kelas VI yang diturunkan dari CP Matematika Fase C dan materi Bab Kubus dan Balok. TP bukan tujuan kegiatan harian; tujuan harian RPM diturunkan dari TP yang relevan.
 
 | Kode | Tujuan pembelajaran | Lingkup materi | Bukti belajar yang diharapkan |
 | --- | --- | --- | --- |
-| **TP-1** | Murid dapat membedakan representasi dua dimensi dan tiga dimensi serta mengenali kubus dan balok melalui benda, gambar, atau model. | 2D dan 3D; kubus; balok; konteks benda sekitar. | Memilah representasi; menyebut alasan bahwa benda nyata hanya *mirip* kubus/balok. |
-| **TP-2** | Murid dapat mengidentifikasi dan membandingkan karakteristik kubus dan balok. | Bidang/sisi, rusuk, titik sudut, serta bentuk sisi kubus dan balok. | Menandai unsur bangun pada model dan menyampaikan sedikitnya satu persamaan serta satu perbedaan yang benar. |
-| **TP-3** | Murid dapat mengonstruksi dan mengurai kubus atau balok menggunakan balok satuan digital. | Penyusunan unit, posisi antarbagiannya, dan penguraian struktur sederhana. | Membuat struktur sesuai target dan menjelaskan bagian penyusunnya. |
-| **TP-4** | Murid dapat mengonstruksi dan mengurai gabungan kubus dan balok dengan lebih dari satu strategi yang masuk akal. | Struktur gabungan, bagian yang tampak/tersembunyi, dan strategi penguraian. | Menyelesaikan bangun target serta menjelaskan dua cara penguraian atau alasan memilih satu cara. |
-| **TP-5** | Murid dapat mengenali dan menentukan tampak depan, atas, dan samping dari kubus, balok, atau gabungannya. | Visualisasi spasial dan representasi ortografis sederhana. | Memilih atau membuat tiga tampak yang konsisten dengan model tiga dimensi. |
-| **TP-6** | Murid dapat membandingkan karakteristik struktur dan menentukan lokasi objek pada peta berpetak. | Perbandingan struktur; lokasi pada grid/peta berpetak. | Membuat pilihan desain berdasarkan ciri struktur dan menempatkan bangunan pada lokasi berpetak yang tepat. |
+| **TP-1** | Murid dapat mengonstruksi kubus, balok, dan gabungannya berdasarkan representasi dua dimensi atau model yang diberikan. | Kubus, balok, gabungan, susunan lapis, dan representasi dua dimensi. | Menghasilkan bangun yang sesuai dan menjelaskan hubungan gambar dengan susunan kubus/balok. |
+| **TP-2** | Murid dapat mengurai kubus, balok, dan gabungannya menjadi bagian penyusun dengan strategi yang masuk akal. | Komposisi-dekomposisi, bagian tampak dan tersembunyi, serta susunan lapis. | Menunjukkan bagian penyusun dan menjelaskan strategi penguraian. |
+| **TP-3** | Murid dapat membuat representasi dua dimensi dari kubus, balok, dan gabungannya melalui tampak depan, atas, dan samping. | Visualisasi spasial, arah pandang, dan representasi ortografis sederhana. | Membuat atau memilih tiga tampak yang konsisten dengan satu model tiga dimensi. |
+| **TP-4** | Murid dapat menentukan model tiga dimensi yang sesuai dengan satu atau beberapa representasi tampak. | Hubungan timbal balik model 3D dan tampak 2D. | Memeriksa kecocokan model dengan bukti dari tampak yang tersedia. |
+| **TP-5** | Murid dapat membandingkan karakteristik kubus, balok, dan bangun ruang gabungan berdasarkan bentuk, susunan, dan tampaknya. | Sisi/bidang, rusuk, titik sudut, komposisi, serta visualisasi. | Menyampaikan persamaan atau perbedaan dengan alasan berbasis model. |
+| **TP-6** | Murid dapat menentukan dan menjelaskan lokasi objek pada peta berpetak sebagai penerapan hubungan posisi. | Peta berpetak, arah, lokasi, dan perpindahan sederhana. | Menentukan lokasi dengan tepat dan menjelaskan perpindahan atau relasinya. |
 
 ## 5. ATP Geometri Fase C — Rancangan MeowMath
 
 ### Alur utama
 
-`mengenali representasi → menganalisis ciri → mengonstruksi/mengurai bangun tunggal → mengonstruksi/mengurai gabungan → memvisualisasikan dari tiga arah → menerapkan dalam proyek dan peta berpetak`
+`mengonstruksi → mengurai → membuat tampak dua dimensi → menentukan model dari tampak → membandingkan karakteristik → menentukan lokasi pada peta`
 
 Urutan ini sengaja bergerak dari pengamatan konkret ke representasi mental dan penerapan. Murid tidak diminta menebak tampak tiga arah sebelum memiliki pengalaman membangun serta memutar model.
 
 | Urutan | TP dan fokus | Pengalaman belajar inti | Asesmen formatif / bukti | Posisi yang disarankan dalam Fase C |
 | --- | --- | --- | --- | --- |
-| 1 | **TP-1 — Mengenali representasi dan jenis bangun** | Mengamati benda/model, memilah 2D–3D, dan membandingkan kubus dengan balok. | Klasifikasi kartu/model dan alasan lisan singkat. | Awal pengembangan materi; dapat dimulai di kelas V. |
-| 2 | **TP-2 — Mengidentifikasi dan membandingkan karakteristik** | Menyorot bidang/sisi, rusuk, dan titik sudut; mencatat persamaan/perbedaan kubus dan balok. | Penandaan unsur pada model serta tabel banding. | Setelah TP-1; dapat dilanjutkan di kelas V. |
-| 3 | **TP-3 — Mengonstruksi dan mengurai bangun tunggal** | Menyusun kubus atau balok dari unit digital, lalu membongkarnya menjadi bagian penyusun. | Produk struktur dan penjelasan urutan/komponen penyusun. | Kelas V, setelah murid mengenali ciri bangun. |
-| 4 | **TP-4 — Mengonstruksi dan mengurai gabungan** | Membangun struktur gabungan; menemukan bagian tersembunyi; membandingkan strategi penguraian. | Tantangan bangun gabungan dan alasan strategi. | Kelas V akhir atau penguatan awal kelas VI, sesuai kesiapan. |
-| 5 | **TP-5 — Visualisasi spasial tiga arah** | Memutar bangun, memprediksi tampak depan–atas–samping, lalu memeriksa dengan mode tampak baku. | Tiga tampak yang cocok dengan satu model dan refleksi kesalahan. | Setelah pengalaman konstruksi cukup; kelas V akhir/kelas VI. |
-| 6 | **TP-6 — Transfer pada proyek dan peta berpetak** | Membandingkan desain struktur, menempatkannya di peta Kota Meow, dan menjelaskan keputusan. | Produk proyek, lokasi grid, serta penjelasan lisan/tulisan. | Penutup ATP Fase C; dapat dilakukan kelas VI atau sebagai proyek penutup kelas V. |
+| 1 | **TP-1 — Mengonstruksi bangun dari representasi** | Mengonstruksi kubus, balok, dan gabungannya berdasarkan model atau representasi dua dimensi. | Bangun yang sesuai dan penjelasan hubungan gambar dengan susunan. | Awal unit Kelas VI. |
+| 2 | **TP-2 — Mengurai bangun ruang** | Mengurai kubus, balok, dan gabungannya menjadi bagian penyusun dengan strategi yang masuk akal. | Bagian penyusun dan alasan strategi penguraian. | Setelah konstruksi awal. |
+| 3 | **TP-3 — Membuat representasi dua dimensi** | Membuat tampak depan, atas, dan samping dari satu model tiga dimensi. | Tiga tampak yang konsisten dengan model. | Inti visualisasi spasial Kelas VI. |
+| 4 | **TP-4 — Menentukan model dari tampak** | Memilih model tiga dimensi yang sesuai dengan satu atau beberapa representasi tampak. | Model terpilih dan bukti dari tampak yang tersedia. | Setelah murid membuat tampak. |
+| 5 | **TP-5 — Membandingkan karakteristik bangun** | Membandingkan kubus, balok, dan gabungannya berdasarkan bentuk, susunan, dan tampaknya. | Persamaan/perbedaan dengan alasan berbasis model. | Penguatan dan transfer. |
+| 6 | **TP-6 — Menentukan lokasi pada peta** | Menentukan dan menjelaskan lokasi objek pada peta berpetak sebagai penerapan hubungan posisi. | Lokasi tepat dan penjelasan perpindahan/relasi. | Penutup unit Kelas VI. |
 
-### Catatan pembagian kelas V–VI
+### Catatan penempatan pada Kelas VI
 
-CP ditargetkan pada akhir fase, sehingga regulasi tidak mewajibkan satu pembagian tunggal antara kelas V dan VI. Untuk MeowMath v1, seluruh enam TP dapat diperkenalkan di kelas V sebagai satu unit fondasi. Guru kelas VI dapat memakai hasilnya untuk penguatan, remedial, dan transfer ke konteks lain. Jika alokasi waktu terbatas, kelas V memprioritaskan TP-1 s.d. TP-4 dan pengenalan TP-5; kelas VI menuntaskan TP-5 dan TP-6.
+CP ditargetkan pada akhir fase dan Buku Guru Matematika Kelas VI memetakan Kubus dan Balok sebagai unit pembelajaran Kelas VI. Karena itu, paket pembelajaran ini ditempatkan di Kelas VI untuk menguatkan konstruksi-dekonstruksi, visualisasi spasial, perbandingan bangun, dan penerapan lokasi pada peta berpetak. Pembagian JP dan urutan TP tetap disesuaikan dengan ATP serta KOSP satuan pendidikan.
 
 ## 6. Indikator keberhasilan dan bukti capaian
 
 | TP | Indikator minimal yang dapat diamati | Contoh bukti yang dapat disimpan aplikasi/guru |
 | --- | --- | --- |
-| TP-1 | Mengelompokkan contoh 2D dan 3D dengan benar serta membedakan kubus dari balok. | Jawaban klasifikasi, alasan pilihan, dan catatan observasi guru. |
-| TP-2 | Menunjukkan bidang/sisi, rusuk, dan titik sudut pada model serta membandingkan kubus dan balok. | Penandaan interaktif, tabel banding, atau penjelasan lisan. |
-| TP-3 | Menyusun dan mengurai bangun tunggal sesuai target. | Riwayat bangun, jumlah percobaan, dan refleksi langkah. |
-| TP-4 | Menyelesaikan bangun gabungan dan menjelaskan satu atau lebih strategi penguraian. | Struktur akhir, strategi yang dipilih, dan alasan. |
-| TP-5 | Menentukan tampak depan, atas, dan samping secara konsisten. | Pilihan/gambar tampak dan rekam bantuan yang digunakan. |
-| TP-6 | Menempatkan objek pada petak yang diminta serta membandingkan karakteristik desain. | Posisi grid, produk proyek, dan penjelasan keputusan desain. |
+| TP-1 | Mengonstruksi kubus, balok, atau gabungannya sesuai model atau representasi dua dimensi. | Struktur akhir, ketepatan susunan, dan penjelasan hubungan gambar dengan bangun. |
+| TP-2 | Mengurai bangun menjadi bagian penyusun dan menjelaskan strategi penguraiannya. | Struktur yang diurai, urutan langkah, dan alasan strategi. |
+| TP-3 | Membuat atau memilih tampak depan, atas, dan samping yang konsisten dengan model. | Gambar tampak, pilihan proyeksi, dan catatan arah pandang. |
+| TP-4 | Menentukan model tiga dimensi yang sesuai dengan satu atau beberapa tampak. | Model terpilih dan bukti pembanding dari tampak yang tersedia. |
+| TP-5 | Membandingkan karakteristik kubus, balok, dan gabungannya dengan alasan berbasis model. | Tabel/pernyataan perbandingan dan penjelasan lisan. |
+| TP-6 | Menentukan lokasi objek pada peta berpetak dan menjelaskan perpindahan atau relasinya. | Posisi grid, jawaban arah, dan penjelasan perpindahan. |
 
 ## 7. Prinsip pelaksanaan yang perlu dijaga
 

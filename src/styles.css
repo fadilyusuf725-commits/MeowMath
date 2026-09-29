@@ -136,6 +136,7 @@ h1, h2, h3, .brand { font-family: ui-rounded, 'Trebuchet MS', system-ui, sans-se
 .learning-note b { font-family: ui-rounded, 'Trebuchet MS', system-ui, sans-serif; font-size: 1.2rem; }
 .learning-note p { color: #e3dce9; font-size: .86rem; margin: .12rem 0 0; }
 
+
 /* Mission player */
 .mission-page { background: linear-gradient(180deg, #fff8ef 0, #fffdfa 100%); min-height: 100vh; padding: 1rem clamp(1rem, 7vw, 9rem) 4rem; }
 .mission-header { align-items: center; display: flex; gap: 1rem; justify-content: space-between; margin: 0 auto 1.2rem; max-width: 1060px; }
