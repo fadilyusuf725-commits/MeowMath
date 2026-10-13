@@ -1,4 +1,27 @@
-import { expect, test } from '@playwright/test'
+import { expect, test, type Locator } from '@playwright/test'
+
+const foldSliderName = 'Geser lipatan dari jaring terbuka ke bangun tertutup'
+
+const foldableNetShapes = [
+  ['Kubus', 'cube'],
+  ['Balok', 'rectangular-prism'],
+  ['Prisma Segitiga', 'triangular-prism'],
+  ['Prisma Segiempat', 'square-prism'],
+  ['Limas Segiempat', 'square-pyramid'],
+  ['Limas Segitiga', 'triangular-pyramid'],
+  ['Tabung', 'cylinder'],
+  ['Kerucut', 'cone'],
+] as const
+
+async function setFoldProgress(slider: Locator, value: number) {
+  await slider.evaluate((element, nextValue) => {
+    const input = element as HTMLInputElement
+    const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')
+    descriptor?.set?.call(input, nextValue)
+    input.dispatchEvent(new Event('input', { bubbles: true }))
+    input.dispatchEvent(new Event('change', { bubbles: true }))
+  }, String(value))
+}
 
 async function enterMeowMath(page: import('@playwright/test').Page, nickname = 'Dina') {
   await page.goto('/')
@@ -28,7 +51,19 @@ test('menu utama memisahkan materi, kurikulum, dan jaring-jaring dengan jelas', 
 
   await openFromMainMenu(page, /Jaring-jaring 3D/)
   await expect(page.getByRole('heading', { name: 'Jaring-jaring bangun ruang' })).toBeVisible()
-  await expect(page.getByRole('heading', { name: /Langkah 1 dari/ })).toBeVisible()
+  const foldSlider = page.getByRole('slider', { name: foldSliderName, exact: true })
+  await expect(foldSlider).toBeVisible()
+  await expect(foldSlider).toHaveAttribute('min', '0')
+  await expect(foldSlider).toHaveAttribute('max', '100')
+  await expect(page.getByRole('heading', { name: /Langkah/i })).toHaveCount(0)
+  await expect(page.getByRole('button', { name: /Lanjut/ })).toHaveCount(0)
+  await expect(page.getByRole('radio', { name: /Susunan [AB]/ })).toHaveCount(0)
+  await expect(page.getByRole('tab', { name: /Lihat terbuka|Lipat pelan-pelan/ })).toHaveCount(0)
+
+  await page.getByRole('tab', { name: 'Balok', exact: true }).click()
+  await expect(page.getByRole('slider', { name: foldSliderName, exact: true })).toBeVisible()
+  await expect(page.getByRole('radio', { name: /Susunan [AB]/ })).toHaveCount(0)
+  await expect(page.getByRole('tab', { name: /Lihat terbuka|Lipat pelan-pelan/ })).toHaveCount(0)
 
   await openFromMainMenu(page, /CP/)
   await expect(page.getByRole('heading', { name: 'Peta Belajar MeowMath' })).toBeVisible()
@@ -38,7 +73,7 @@ test('menu utama memisahkan materi, kurikulum, dan jaring-jaring dengan jelas', 
   await expect(page.getByText('TP-6', { exact: true })).toBeVisible()
 })
 
-test('materi dan jaring-jaring memberi model 3D untuk bangun pengayaan', async ({ page }) => {
+test('materi dan semua jaring-jaring yang dapat dilipat memberi model 3D', async ({ page }) => {
   await enterMeowMath(page, 'Sita')
 
   await page.getByRole('button', { name: /Materi Bangun Ruang/ }).click()
@@ -49,14 +84,31 @@ test('materi dan jaring-jaring memberi model 3D untuk bangun pengayaan', async (
   await page.getByRole('button', { name: 'Tampilkan Limas Segiempat dari arah atas', exact: true }).click()
 
   await openFromMainMenu(page, /Jaring-jaring 3D/)
+  for (const [label, shape] of foldableNetShapes) {
+    await page.getByRole('tab', { name: label, exact: true }).click()
+    const foldSlider = page.getByRole('slider', { name: foldSliderName, exact: true })
+    const foldedModel = page.getByTestId(`net-fold-3d-${shape}`)
+
+    await expect(foldSlider).toBeVisible()
+    await expect(foldSlider).toHaveAttribute('min', '0')
+    await expect(foldSlider).toHaveAttribute('max', '100')
+    await expect(foldSlider).toHaveValue('0')
+    await expect(foldedModel).toBeVisible()
+
+    await setFoldProgress(foldSlider, 100)
+    await expect(foldSlider).toHaveValue('100')
+    await expect(foldedModel).toHaveAttribute('data-fold-state', 'tertutup')
+  }
+
   await page.getByRole('tab', { name: 'Tabung', exact: true }).click()
-  await expect(page.getByRole('heading', { name: /Langkah 1 dari 3: Buka selimut/ })).toBeVisible()
-  await expect(page.getByTestId('net-fold-3d-cylinder')).toBeVisible()
-  await page.getByRole('button', { name: /Lanjut/ }).click()
-  await expect(page.getByRole('heading', { name: /Langkah 2 dari 3: Buat alas/ })).toBeVisible()
-  await expect(page.getByText('Lipatan 50%', { exact: true })).toBeVisible()
+  const foldSlider = page.getByRole('slider', { name: foldSliderName, exact: true })
+  await setFoldProgress(foldSlider, 50)
+  await expect(foldSlider).toHaveValue('50')
+  await expect(page.getByText('Lipatan 50%', { exact: true })).toHaveCount(0)
+  await expect(page.getByText('Lipatan 100%', { exact: true })).toHaveCount(0)
   await page.getByRole('tab', { name: 'Bola', exact: true }).click()
   await expect(page.getByText('Bola tidak punya jaring-jaring datar tepat')).toBeVisible()
+  await expect(page.getByRole('slider', { name: foldSliderName, exact: true })).toHaveCount(0)
 })
 
 test('karya studio arsitektur tersimpan kembali pada perangkat yang sama', async ({ page }) => {

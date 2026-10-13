@@ -63,11 +63,9 @@ type PreparedPolyhedron = {
 export interface NetFold3DProps {
   /** Bangun yang sedang dipelajari pada lab jaring-jaring. */
   readonly shape: FoldableShape
-  /** Nomor tahap lipatan saat ini, dimulai dari 0. */
-  readonly step: number
-  /** Banyak tahap pada bangun yang sedang dipelajari. */
-  readonly totalSteps: number
-  /** Bidang yang sedang dibahas pada langkah ini, untuk sorotan visual. */
+  /** Progres lipatan kontinu dari 0 (terbuka) sampai 1 (tertutup). */
+  readonly progress: number
+  /** Bidang yang sedang dipilih murid, untuk sorotan visual. */
   readonly activePieces?: readonly string[]
 }
 
@@ -588,12 +586,11 @@ const buttonStyle: CSSProperties = {
  * Model jaring-jaring 3D prosedural. Bidang bangun datar diputar pada rusuk
  * yang sama, sehingga bidang yang bertetangga selalu tetap menyatu saat dilipat.
  */
-export function NetFold3D({ shape, step, totalSteps, activePieces = [] }: NetFold3DProps) {
+export function NetFold3D({ shape, progress, activePieces = [] }: NetFold3DProps) {
   const [view, setView] = useState<ViewId>('isometric')
   const [canvasKey, setCanvasKey] = useState(0)
-  const totalTransitions = Math.max(1, totalSteps - 1)
-  const target = MathUtils.clamp(step / totalTransitions, 0, 1)
-  const percentage = Math.round(target * 100)
+  const target = MathUtils.clamp(progress, 0, 1)
+  const foldState = target === 0 ? 'terbuka' : target === 1 ? 'tertutup' : 'bergerak'
   const hint = target === 0
     ? 'Jaring masih terbuka dan rata.'
     : target < 1
@@ -611,11 +608,11 @@ export function NetFold3D({ shape, step, totalSteps, activePieces = [] }: NetFol
   }
 
   return (
-    <section data-testid={`net-fold-3d-${shape}`} aria-label={`Model 3D lipatan ${shapeLabels[shape]}`} style={panelStyle}>
+    <section data-testid={`net-fold-3d-${shape}`} data-fold-state={foldState} aria-label={`Model 3D lipatan ${shapeLabels[shape]}`} style={panelStyle}>
       <div style={{ alignItems: 'center', display: 'flex', gap: 8, justifyContent: 'space-between', padding: '9px 10px 7px' }}>
         <div>
           <p style={{ color: '#39776d', fontSize: 10, fontWeight: 900, letterSpacing: '.055em', margin: 0 }}>MODEL LIPAT 3D</p>
-          <p style={{ color: '#4a4759', fontSize: 12, fontWeight: 800, margin: '2px 0 0' }}>Lipatan {percentage}%</p>
+          <p style={{ color: '#4a4759', fontSize: 12, fontWeight: 800, margin: '2px 0 0' }}>Ikuti gerakan jaringnya.</p>
         </div>
         <button type="button" onClick={resetView} style={{ ...buttonStyle, background: '#fff7e8', borderColor: '#efd9aa', color: '#70511c' }} aria-label="Atur ulang arah model lipatan">↺ Reset</button>
       </div>
@@ -645,7 +642,7 @@ export function NetFold3D({ shape, step, totalSteps, activePieces = [] }: NetFol
         </Canvas>
       </div>
       <div style={{ padding: '8px 10px 10px' }}>
-        <p id={`net-fold-hint-${shape}`} style={{ color: '#5d776f', fontSize: 11, lineHeight: 1.35, margin: '0 0 7px' }}>{hint} Seret model untuk melihatnya dari arah lain.</p>
+        <p id={`net-fold-hint-${shape}`} aria-live="polite" style={{ color: '#5d776f', fontSize: 11, lineHeight: 1.35, margin: '0 0 7px' }}>{hint} Seret model untuk melihatnya dari arah lain.</p>
         <div aria-label="Arah tampilan model lipatan" style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {viewButtons.map((item) => <button key={item.id} type="button" onClick={() => selectView(item.id)} aria-pressed={view === item.id} style={{ ...buttonStyle, background: view === item.id ? '#39776d' : '#f4fbf9', borderColor: view === item.id ? '#39776d' : '#c9ddd7', color: view === item.id ? '#fff' : '#35645e' }}>{item.label}</button>)}
         </div>
