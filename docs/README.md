@@ -32,3 +32,4 @@ Subfolder `sumber/template-acuan` menyimpan dua template validasi asli sebagai r
 | --- | --- |
 | `kurikulum-atp.md` | Pemetaan CP, TP, dan ATP Geometri Fase C. |
 | `unit-meowmath-kelas-vi.md` | Rencana pelaksanaan unit MeowMath kelas VI. |
+| `draf-artikel-meowmath.md` dan `.docx` | Draf awal artikel: masalah penelitian, tujuan, grand theory, teori pendukung, dan kerangka berpikir. |

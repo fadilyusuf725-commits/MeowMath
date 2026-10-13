@@ -187,51 +187,61 @@ Letakkan panah DEPAN di sisi yang menghadap murid. Dari arah depan, tampak bangu
 
 ## 4. Keterampilan Mengelola Kelas
 
-**Tujuan adegan:** Guru menyampaikan prosedur kerja berpasangan, memantau giliran, dan menangani gangguan kecil tanpa menghentikan pembelajaran.
+**Tujuan adegan:** Guru membentuk kelompok berdasarkan kartu bangun datar, mengatur murid duduk mengikuti bentuk kelompoknya, dan menjaga perpindahan tetap tertib.
 
-**Alat:** Susunan empat kubus dan satu perangkat atau satu lembar gambar untuk sepasang murid.
+**Alat:** Kartu bergambar lingkaran, segitiga, persegi, dan persegi panjang; tanda posisi kelompok di lantai atau meja; kursi yang sudah tersedia.
+
+**Persiapan:** Siapkan jumlah kartu yang seimbang untuk setiap bentuk. Tandai area kelompok terlebih dahulu. Kursi tidak perlu diangkat atau meja berat dipindahkan saat kegiatan.
 
 ### Skenario 5 menit: Mengelola Kelas
 
-#### 0:00-0:45 | Menyampaikan tugas dan aturan
+#### 0:00-0:45 | Menjelaskan cara berkelompok
 
-**Guru:** "Kalian bekerja berpasangan selama dua menit. Murid A menjadi penyusun, Murid B menjadi pengamat. Buat dugaan tampak atas sebelum memeriksa gambar. Setelah satu menit, bertukar peran. Gunakan perangkat dan kubus bergantian."
+*Guru menunjukkan empat kartu bentuk.*
 
-**Guru:** "Siapa yang mulai sebagai penyusun? Apa yang dilakukan pengamat?"
+**Guru:** "Setiap orang ambil satu kartu. Cari teman yang kartunya memiliki bentuk yang sama. Berjalan, jangan berlari. Setelah berkumpul, duduk di area dengan tanda bentuk yang sama."
 
-**Murid A:** "Saya menyusun. Murid B mengamati dan membuat dugaan."
+**Guru:** "Sebelum mulai, siapa yang bisa mengulang aturan perpindahannya?"
 
-#### 0:45-1:15 | Memulai dengan tertib
+**Murid A:** "Cari kelompok dengan bentuk yang sama, lalu duduk di tempat yang tandanya sama."
 
-*Guru membagikan atau menunjuk alat, memastikan panah DEPAN terlihat.*
+#### 0:45-1:30 | Membentuk kelompok
 
-**Guru:** "Mulai. Pastikan panah DEPAN tetap menghadap kalian."
+*Guru membagikan kartu. Murid berjalan ke area kelompok masing-masing.*
 
-#### 1:15-3:30 | Memantau dan menangani gangguan ringan
+**Guru:** "Lingkaran berkumpul di tanda lingkaran. Segitiga ke tanda segitiga. Persegi dan persegi panjang, silakan ke tanda kalian."
 
-*Murid A langsung menekan tombol periksa sebelum pasangannya menyampaikan dugaan.*
+*Murid B hendak bergabung dengan kelompok persegi panjang, tetapi memegang kartu persegi.*
 
-**Guru:** "Tahan sebentar, A. Kesepakatan kita adalah membuat dugaan dulu. B, sampaikan petak mana yang menurutmu terisi. Setelah itu A boleh memeriksa."
+**Guru:** "B, periksa bentuk pada kartumu. Kelompok mana yang memiliki bentuk yang sama? Silakan pindah dengan tenang."
 
-**Murid B:** "Tiga petak membentuk L."
+**Murid B:** "Kelompok persegi. Saya pindah ke sana."
 
-**Guru:** "Terima kasih. A, silakan periksa sekarang. Lalu bertukar peran sesuai waktu yang disepakati."
+**Guru:** "Terima kasih sudah mencocokkan kartumu dan berpindah dengan tertib."
 
-*Guru memindai pasangan dan memberi penguatan spesifik.*
+#### 1:30-3:15 | Mengatur posisi duduk
 
-**Guru:** "Saya melihat kalian sudah bergantian dan menggunakan panah untuk menjaga arah."
+**Guru:** "Sekarang duduk mengikuti bentuk kelompok kalian. Kelompok lingkaran membuat susunan melingkar. Kelompok segitiga menempati tiga sisi segitiga. Kelompok persegi duduk mengikuti empat sisi persegi. Kelompok persegi panjang mengikuti sisi panjang dan sisi pendeknya."
 
-#### 3:30-4:30 | Mengatur transisi berbagi
+*Guru berkeliling, mengecek bentuk susunan dan memastikan jalan antarkelompok tetap terbuka.*
 
-**Guru:** "Waktu mencoba selesai. Letakkan alat di meja dan arahkan perhatian ke sini. Satu pasangan, sampaikan jawaban serta satu alasannya."
+**Guru:** "Pastikan semua anggota mendapat tempat dan tidak ada kursi yang menghalangi jalan. Jika kelompokmu belum menyerupai bentuk kartu, rapikan posisi duduk tanpa memindahkan meja."
 
-**Murid A:** "Dari atas terlihat tiga posisi yang membentuk L."
+#### 3:15-4:20 | Memastikan kesiapan kelompok
 
-#### 4:30-5:00 | Menutup kegiatan
+**Guru:** "Kelompok lingkaran, apakah semua anggota sudah duduk melingkar? Kelompok segitiga, tunjukkan tiga sisi kelompok kalian. Kelompok persegi dan persegi panjang, pastikan sisi panjang dan pendeknya terlihat."
 
-**Guru:** "Terima kasih. Kalian mengikuti giliran dan menyampaikan alasan sebelum memeriksa. Kembalikan alat ke tempatnya; setelah ini kita akan membandingkan tampak dari arah lain."
+**Murid A:** "Sudah. Kami duduk mengikuti sisi-sisinya."
 
-**Tanda keterampilan terlihat:** Instruksi dan peran jelas, guru memantau, gangguan ditangani tenang, transisi tertib, dan waktu belajar tetap terjaga.
+*Jika ada kelompok yang terlalu ramai atau saling berebut tempat:*
+
+**Guru:** "Berhenti sejenak. Tetap di area kelompok, beri ruang untuk teman, lalu pilih tempat secara bergiliran. Saya tunggu sampai semua siap."
+
+#### 4:20-5:00 | Menutup dan mengarahkan kegiatan
+
+**Guru:** "Terima kasih, semua kelompok sudah duduk sesuai bentuk kartunya. Tetap di tempat kelompok masing-masing. Berikutnya, kalian akan mengamati ciri bangun datar pada kartu kelompok."
+
+**Tanda keterampilan terlihat:** Instruksi pengelompokan jelas, perpindahan aman, tempat duduk sesuai bentuk, guru memantau semua kelompok, dan arahan koreksi diberikan dengan tenang.
 
 ---
 
@@ -244,7 +254,7 @@ Setelah tiap adegan, pengamat mencatat satu bukti yang benar-benar terlihat, buk
 | Menjelaskan | Penjelasan runtut dan murid dapat menyebut kembali perbedaan tampak depan dan atas. |
 | Bertanya | Guru memberi waktu berpikir dan meminta murid menyertakan bukti dari model. |
 | Mengadakan variasi | Pergantian benda, gambar/layar, dan respons murid membantu memahami konsep yang sama. |
-| Mengelola kelas | Murid memahami giliran; guru menangani gangguan dengan arahan singkat dan tenang. |
+| Mengelola kelas | Murid berkumpul berdasarkan kartu, duduk mengikuti bentuk kelompok, dan berpindah dengan tertib; guru memantau serta mengoreksi tanpa mempermalukan murid. |
 
 Sesuaikan nama pemeran dan alat dengan kondisi latihan. Jika durasi melampaui 5 menit, pangkas jumlah jawaban murid, bukan waktu berpikir atau kesimpulan konsep.
 
