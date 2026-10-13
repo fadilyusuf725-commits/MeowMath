@@ -17,7 +17,11 @@ export default defineConfig({
         background_color: '#fff8ee',
         display: 'standalone',
         lang: 'id',
-        start_url: '/',
+        // Aplikasi dipublikasikan pada subdirektori /MeowMath/. Tanpa jalur
+        // ini, PWA yang dipasang dapat membuka root lama dan tampak seperti
+        // belum menerima pembaruan terbaru.
+        start_url: '/MeowMath/',
+        scope: '/MeowMath/',
         icons: [
           {
             src: 'icon.svg',

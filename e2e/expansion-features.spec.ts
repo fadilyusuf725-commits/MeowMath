@@ -24,7 +24,7 @@ async function setFoldProgress(slider: Locator, value: number) {
 }
 
 async function enterMeowMath(page: import('@playwright/test').Page, nickname = 'Dina') {
-  await page.goto('/')
+  await page.goto('/MeowMath/')
   await page.getByLabel('Nama panggilan').fill(nickname)
   await page.getByRole('button', { name: /Masuk ke Kota Meow/ }).click()
   await expect(page.getByRole('heading', { name: new RegExp(`Halo, ${nickname}`, 'i') })).toBeVisible()
