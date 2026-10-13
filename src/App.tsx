@@ -6,6 +6,7 @@ import { CurriculumMap, LearningHub } from './components/LearningHub'
 import type { MissionScore } from './components/MissionPlayer'
 import type { ArchitecturePresetId, ArchitectureStudioDesign } from './components/ArchitectureStudio'
 import { missionById, missions, type LearningStatus, type MissionDefinition, type MissionId } from './content/missions'
+import { MeowMathChat } from './components/MeowMathChat'
 import {
   clearAllLocalData,
   createProfile,
@@ -314,6 +315,7 @@ function App() {
           onGoTeacher={() => setScreen('teacher')}
         />
       )}
+      {screen === 'home' && <MeowMathChat />}
       {screen === 'missions' && (
         <MissionMapScreen
           latestResults={latestResults}

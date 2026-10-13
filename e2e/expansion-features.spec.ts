@@ -73,6 +73,22 @@ test('menu utama memisahkan materi, kurikulum, dan jaring-jaring dengan jelas', 
   await expect(page.getByText('TP-6', { exact: true })).toBeVisible()
 })
 
+test('pendamping Mio memberi petunjuk lokal dari pertanyaan cepat dan pertanyaan murid', async ({ page }) => {
+  await enterMeowMath(page, 'Nara')
+
+  await expect(page.getByRole('heading', { name: 'Butuh petunjuk kecil?' })).toBeVisible()
+  await expect(page.getByText('Petunjuk Mio bekerja tanpa internet. Percakapan ini hanya ada selama halaman terbuka.')).toBeVisible()
+
+  await page.getByRole('button', { name: 'Apa bedanya kubus dan balok?', exact: true }).click()
+  await expect(page.getByText(/Kubus dan balok sama-sama memiliki 6 bidang, 12 rusuk, dan 8 titik sudut/)).toBeVisible()
+
+  const question = page.getByLabel('Tulis pertanyaan untuk Mio')
+  await question.fill('Apa itu tabung?')
+  await page.getByRole('button', { name: 'Kirim', exact: true }).click()
+  await expect(question).toHaveValue('')
+  await expect(page.getByText(/Tabung mempunyai dua alas berbentuk lingkaran/)).toBeVisible()
+})
+
 test('materi dan semua jaring-jaring yang dapat dilipat memberi model 3D', async ({ page }) => {
   await enterMeowMath(page, 'Sita')
 
